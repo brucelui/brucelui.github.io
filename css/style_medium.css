@@ -1,0 +1,146 @@
+@charset "UTF-8";
+/* Handcoded by Bruce Lui */
+
+header {
+	font-size: .9em;
+}
+
+header a.logo {
+	background-image: url(../images/burulogo.svg);
+	}
+
+nav a{
+	padding: 20px 20px 0px 0px;
+}
+
+.page_home .logo_home {
+	display: none;
+}
+
+.page_home .page_container {
+	height: 10%;
+}
+
+.page_content{
+	padding-top: 80px;
+}
+
+.video_bg video{
+	display: none;
+}
+
+.content_container {
+	max-width: 80%;
+	text-align: center;
+	padding: 30px 0px 30px 0px;
+}
+
+.columns_3 {
+	width: 46%;
+	float: left;
+	padding: 20px 5px 0px 5px;
+}
+
+.columns_3_1 {
+	width: 96%;
+	float: left;
+	overflow: hidden;
+}
+
+.columns_3_2 {
+	width: 96%;
+	float: left;
+}
+
+.columns_2 {
+	width: 95%;
+	float: left;
+	text-align: left;
+	padding: 0px 10px 0px 10px;
+}
+
+.img_container{
+	text-align: center;
+}
+
+.column.worknav{
+	width: 46%;
+	padding: 20px 2% 0px 2%;
+}
+
+.column.four{
+	width: 46%;
+	margin: 10px auto 10px auto;
+}
+
+.column.two{
+	width: 96%;
+	margin: 10px auto 10px auto;
+}
+
+.columns_1{
+	width: 96%;
+	padding: 0px 2% 0px 2%;
+}
+
+.columns_1 p{
+	width: 100%;
+}
+
+article {
+  -webkit-columns: 1 200px;
+     -moz-columns: 1 200px;
+          columns: 1 200px;
+}
+
+.cv_container {
+	margin-top: 0;
+}
+
+.worknav_container{
+	width: 100%;
+}
+
+footer img {
+	width: 10%;
+}
+
+.top_block  .top_ensemble, .top_338, .top_info, .top_toro, .top_zara{
+	height: 650px;
+}
+	
+.topicon {
+	top: 230px;
+	max-height: 600px;
+}
+
+
+.fordesktop {
+	display: none;
+}
+.formobile {
+	display: block;
+}
+
+#btm_process {
+	width: 100%;
+}
+
+/* Story Pages */
+
+.story_block .story_1, .story_2, .story_3, .story_4, .story_5{
+	height: 80vh;
+	font-size: .9em;
+	line-height: 1.6em;
+}
+
+.story_container {
+	width: 80%;
+	position: absolute;
+	margin: auto;
+	top: 0; right: 0; bottom: 0; left: 0;
+}
+
+.story_4 .story_container{
+	top: -20%;
+}
