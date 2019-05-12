@@ -3,11 +3,12 @@
 
 header {
 	font-size: .8em;
+	/* position: relative; */
 }
 
 header a.logo {
 	background-image: url(../images/burulogo.svg);
-	width: 150px;
+	/* width: 150px; */
 	}
 
 header a:hover {
@@ -41,6 +42,10 @@ p {
 	font-size: 1em;
 }
 
+/* .page_home {
+	margin: 0px auto 0px auto;
+} */
+
 .page_home .logo_home {
 	display: none;
 }
@@ -55,6 +60,7 @@ p {
 
 .page_story {
 	height:500px;
+	background-attachment: inherit;
 }
 
 .content_container { /* MAIN CONTAINER */
