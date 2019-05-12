@@ -8,7 +8,6 @@
 		<meta name="author" content="Bruce Lui">
 		<meta name="keywords" content="Bruce Lui, brucelui, siat, portfolio, design, ux" />
 	    <meta name="description" content="User Experience Designer.">
-		<meta name="theme-color" content="#212121">
 	
 		<title>Bruce Lui</title>
 		
@@ -19,12 +18,13 @@
 		<link rel="stylesheet" type="text/css" media="only screen and (min-width:481px) and (max-width:768px)" href="css/style_medium.css" />
 		
 		<!-- FONTS -->
-		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Montserrat:400,700|Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Nunito|Martel|Raleway|Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
 		
 		<!-- JS -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="js/headroom.js"></script>
 		<script src="js/java.js"></script>
+		<script src="js/objectFitPolyfill.basic.min.js"></script>
 		<script>
 			$(function() {
 			  $('a[href*=#]:not([href=#])').click(function() {
@@ -60,7 +60,7 @@
 			<a class="logo" href="./index.html"></a>
 		</header>
 
-		<div id="header">
+		<!-- <div id="header">
 			<nav>
 				<ul class="menu_short">
 					<li><a href="./index.html#goto_portfolio">works</a></li>
@@ -75,18 +75,19 @@
 				</ul>
 				</div>
 			</nav>
-		</div>
+		</div> -->
 		
 		<section id="goto_home">
 			<div class="page_home">
-				<div class="video_bg">
-					<video id="video-background" preload="auto" autoplay="false" loop="loop" muted="muted" padding="0" margin="0" width="100%" height="100%"> <!-- poster="./images/bg1.jpg" -->
+				<!-- <div class="brightness"> -->
+					<video class="video_bg brightness" data-object-fit="cover" preload="auto" autoplay muted loop>
 						<source src="./images/indexvideo.mp4" type="video/mp4">
 					</video>
-				</div>
+				<!-- </div> -->
 				<div class="page_container">
-					<h1>they call me Bruce</h1>
-					<p>User Experience Designer by Day, Photo Ninja by Night</p>
+					<h1>they call him Bruce</h1>
+					<p><h9>Designer for the people by day</h9>
+						<br><h9>Photo Ninja by night</h9></p>
 					
 					<div class="indentAbit"><a href="#goto_portfolio"><div class="formbutton">show me what you got</div></a>
 					</div>
@@ -98,15 +99,31 @@
 		<section id="goto_portfolio">
 			<div class="page_content">
 				<div class="content_container">
-					<h2>want to know what I can do?</h2><br>
-					here are some selected works, each highlighting a different competency<br><br>
+					<h6>rumor has it he's currently working at <a href="https://company.trivago.com/about/">trivago</a> <br>as their Digital Product Designer</h6><br><br><br><br>
+					<h2>but don't be shy, check out some works of his</h2><br>
+					<!-- here are some selected works, each highlighting a different competency<br><br> -->
+
+					<div class="row">
+						<div class="large-12 columns">
+							<a href="./trivago.html">
+							<div class="workBox work4">
+								<!-- <div class="btn_Work">-></div> -->
+								<div class="centerText">
+									<div class="appIcon appIcon1"></div>
+								<h9>trivago</h9>
+								<span><br><h5>helping travelers book hotels on their phones</h5></span>
+								</div>
+							</div></a>
+						</div>
+					</div>
 
 					<div class="row">
 						<div class="large-12 columns">
 							<a href="./toro.html"><div class="workBox work1">
 							<div class="centerText">
-								<h5>toro</h5>
-								<span><br><h9>problem solving with research and user testing</h9></span>
+								<div class="appIcon appIcon2"></div>
+								<h9>toro</h9>
+								<span><br><h5>rethinking about enrolling into classes</h5></span>
 							</div></div></a>
 						</div>
 					</div>
@@ -115,8 +132,9 @@
 						<div class="large-12 columns">
 							<a href="./zara.html"><div class="workBox work2">
 							<div class="centerText">
-								<h5>zara lookbook</h5>
-								<span><br><h9>bringing meaningfulness to an existing brand</h9></span>
+								<div class="appIcon appIcon3"></div>
+								<h9>zara lookbook</h9>
+								<span><br><h5>bringing meaningfulness to an existing brand</h5></span>
 							</div></div></a>
 						</div>
 					</div>
@@ -125,13 +143,14 @@
 						<div class="large-12 columns">
 							<a href="./ensemble.html"><div class="workBox work3">
 							<div class="centerText">
-								<h5>ux at ensemble</h5>
-								<span><br><h9>actual work experience</h9></span>
+								<div class="appIcon appIcon4"></div>
+								<h9>ensemble</h9>
+								<span><br><h5>ux internship journey</h5></span>
 							</div></div></a>
 						</div>
 					</div>
 
-					<div class="row">
+					<!-- <div class="row">
 						<div class="large-6 columns">
 							<div>
 								<a href="./338.html"><div class="workBox work4">
@@ -150,20 +169,20 @@
 								</div></div></a>
 							</div>
 						</div>
-					</div>
+					</div> -->
 
 					<div class="clear-fix"></div>
 					<div>
 						<br><h2>or you can check out some recent dribbble shots</h2><br>
 						<div class="row">
 							<div class="small-6 medium-6 large-3 columns">
+								<a href="https://dribbble.com/shots/6409505-trivago-App-Loading-Animation" target="_blank"><img src="https://cdn.dribbble.com/users/267520/screenshots/6409505/loadinganim3.gif" class="dribBox"></a>
+							</div>
+							<div class="small-6 medium-6 large-3 columns">
 								<a href="https://dribbble.com/shots/3046840-ClearSkies-Transition-Concept" target="_blank"><img src="https://cdn.dribbble.com/users/267520/screenshots/3046840/brucelui_day1_a.gif" class="dribBox"></a>
 							</div>
 							<div class="small-6 medium-6 large-3 columns">
 								<a href="https://dribbble.com/shots/3022216-Product-to-Cart-Animation" target="_blank"><img src="https://cdn.dribbble.com/users/267520/screenshots/3022216/zara_dribbble_cart.gif" class="dribBox"></a>
-							</div>
-							<div class="small-6 medium-6 large-3 columns">
-								<a href="https://dribbble.com/shots/3009944-Product-Transitions" target="_blank"><img src="https://cdn.dribbble.com/users/267520/screenshots/3009944/zara_dribbble_transition.gif" class="dribBox"></a>
 							</div>
 							<div class="small-6 medium-6 large-3 columns">
 								<a href="https://dribbble.com/shots/2946679-Guilt-Tripping-Non-Donors" target="_blank"><img src="https://cdn.dribbble.com/users/267520/screenshots/2946679/guilttrip_dribbble_b.gif" class="dribBox"></a>
@@ -178,8 +197,8 @@
 		<section id="goto_story">
 			<div class="page_story">
 				<div class="page_container">
-					<h3>I like exploring meaningful interactions everywhere</h3>
-					<div class="indentAbit"><a href="./story.html"><div class="formbutton">learn a little more about me
+					<h5>"I like exploring meaningful interactions everywhere"</h5>
+					<div class="indentAbit"><a href="./story.html"><div class="formbutton">learn a little more about him
 					</div></div></a>
 				</div>
 			</div>
@@ -190,26 +209,28 @@
 				<div class="content_container">
 					<div class="row">
 						<div class="large-6 columns cvPara">
-							<h2>what do I value as a designer?</h2>
+							<h6>his values as a designer?</h6>
 							<div class="indentAbit">
-								<h4>designing for an compelling experience</h4>
-								<p>Making things look only pretty does not make it compelling. I want to design things that gives meaning for people to use and build trust in an experience that makes sense.</p>
-								<h4>avoiding being attached to ideas</h4>
-								<p>We can easily miss the big problems and fall into traps when we don’t iterate. I believe in taking the time to explore possibilities.</p>
-								<h4>always looking to learn</h4>
-								<p>I value in taking criticism and giving constructive feedback. Hearing and looking at a different perspective is another fun part in design.</p>
+								<p><h2>designing for an compelling experience</h2>
+								<br>Making things look only pretty does not make it compelling. I want to design things that gives meaning for people to use and build trust in an experience that makes sense.</p>
+								<p><h2>avoiding being attached to ideas</h2>
+								<br>We can easily miss the big problems and fall into traps when we don’t iterate. I believe in taking the time to explore possibilities.</p>
+								<p><h2>always looking to learn</h2>
+								<br>I value in taking criticism and giving constructive feedback. Hearing and looking at a different perspective is another fun part in design.</p>
 							</div>
 						</div>
 						<div class="large-6 columns cvPara">
-							<h2>my achievements</h2>
+							<h6>his achievements?</h6>
 							<div class="indentAbit">
-								<h4>Lumohacks Hackathon 2016</h4>
-								<p>First Place Winner</p>
-								<h4>SIAT Showcase Competition 2013</h4>
-								<p>Top 3 in 'Programming and Systems Design'
+								<p><h2>Get Tech Together Conference 2019</h2>
+								<br>Speaker</p>
+								<p><h2>Lumohacks Hackathon 2016</h2>
+								<br>First Place Winner</p>
+								<p><h2>SIAT Showcase Competition 2013</h2>
+								<br>Top 3 in 'Programming and Systems Design'
 								<br>Top 3 in 'Physical Prototype and Modeling'</p>
-								<h4>SIAT Showcase Competition 2012</h4>
-								<p>Top 3 in 'Moving Images'
+								<p><h2>SIAT Showcase Competition 2012</h2>
+								<br>Top 3 in 'Moving Images'
 								<br>Top 3 in 'Body and Environment'</p>
 							</div>
 						</div>
@@ -221,7 +242,7 @@
 		<section id="goto_contact">
 			<footer>
 				<div class="contact_container">
-					<h3>thanks for checking out my portfolio! <br>perhaps we can keep in touch?</h3>
+					<h5>thanks for checking out my portfolio! <br>perhaps we can keep in touch?</h5>
 					<div class="indentAbit"><a href="mailto:brucelui9@gmail.com"><div class="formbutton">shoot me an email</div></a></div>
 					<div class="indentAbit"><p>or you can check me out through these
 						<br>
@@ -231,7 +252,9 @@
 					</div>
 				</div>
 				<br>Made with spilt coffee on my pants.
-				<br>&copy; 2016 Bruce Lui
+				<br>&copy; <script type="text/javascript">
+					document.write(new Date().getFullYear());
+				  </script> Bruce Lui
 			</footer>
 		</section>
 	</body>
