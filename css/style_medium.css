@@ -25,6 +25,15 @@ nav a{
 	padding-top: 80px;
 }
 
+.page_story {
+	height:900px;
+	background-attachment: inherit;
+}
+
+.page_story .page_container {
+	height: 60%;
+}
+
 .video_bg video{
 	display: none;
 }
@@ -32,8 +41,32 @@ nav a{
 .content_container {
 	max-width: 80%;
 	text-align: center;
-	padding: 30px 0px 30px 0px;
+	padding: 100px 0px 100px 0px;
 }
+
+.workBox {
+	height: 360px;
+}
+
+.workMain {
+	height: 800px;
+}
+
+.workMain .centerText {
+	top: 28%;
+}
+
+.workFeatured {
+	padding-top: 240px;
+}
+
+.hide1 {
+	display: none;
+}
+.hide2 {
+	display: initial;
+}
+
 
 .columns_3 {
 	width: 46%;
