@@ -58,6 +58,10 @@ p {
 	display: none;
 }
 
+.quotecontainer {
+	width: 90%;
+}
+
 .page_story {
 	height:1000px;
 	background-attachment: inherit;
@@ -303,7 +307,7 @@ ul li:hover ul {
 }
 
 .topicon {
-	max-height: 300px;
+	max-height: 350px;
 	top: 250px;
 }
 
@@ -336,4 +340,11 @@ ul li:hover ul {
 
 .story_4 .story_container{
 	top: 15%;
+}
+
+h6 {
+	font-size: 1.25em;
+}
+h7 {
+	font-size: 1em;
 }

@@ -38,6 +38,10 @@ nav a{
 	display: none;
 }
 
+.quotecontainer {
+	width: 80%;
+}
+
 .content_container {
 	max-width: 80%;
 	text-align: center;
@@ -176,4 +180,11 @@ footer img {
 
 .story_4 .story_container{
 	top: -20%;
+}
+
+h6 {
+	font-size: 1.75em;
+}
+h7 {
+	font-size: 1.25em;
 }
