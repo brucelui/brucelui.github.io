@@ -602,6 +602,7 @@ article {
 .container_cv {
 	display: flex;
 	flex-direction: row;
+    justify-content: space-around;
 }
 
 .page_cv {
@@ -622,6 +623,9 @@ article {
 
 .cvVideo{
 	width: 600px;
+	display: flex;
+	flex-direction: column;
+	align-content: space-around;
 }
 
 .worknav a{
