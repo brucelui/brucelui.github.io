@@ -636,20 +636,21 @@ article {
 
 footer {
 	text-align: center;
-	color: #FFF;
-	background-color: #2b2b2b;
-	margin: 0px;
-	padding: 0px;
+	color: var(--color-secondary);
+	background-color: var(--color-primary);
+	display: flex;
+	flex-direction: column;
+	padding: 80px 8px 40px 8px;
 	z-index: 999;
 }
 
-footer p{
+/* footer p{
 	padding-top: 10px;
 }
 
 footer a{
 	padding: 0px;
-}
+} */
 
 .credit a{
 	color:#898989;
