@@ -32,6 +32,8 @@ body {
 	padding: 0;
 	/* background-color: #EFEFEF; */
 	background-color: var(--color-background);
+	row-gap: 16px;
+	column-gap: 16px;
 	}
 	
 a {
@@ -619,7 +621,7 @@ article {
 }
 
 .cvVideo{
-	width: 360px;
+	width: 600px;
 }
 
 .worknav a{
