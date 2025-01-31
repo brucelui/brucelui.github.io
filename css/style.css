@@ -45,6 +45,16 @@ a:hover{
 	color: var(--color-tertiary);
 }
 
+a svg {
+	width: 24;
+	height: 24;
+	fill: var(--color-secondary)
+}
+
+a:hover svg{
+	color: var(--color-primary)
+}
+
 p a{font-weight: 700;
 	/* letter-spacing: 2px; */
 }
