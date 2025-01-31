@@ -618,6 +618,10 @@ article {
 	color: #777;
 }
 
+.cvVideo{
+	width: 360px;
+}
+
 .worknav a{
 	color: #2b2b2b;
 }
