@@ -262,6 +262,10 @@ li {
 	background-color: #DAD7CE;
 }
 
+.section_title {
+	margin-top: 40px;
+}
+
 /* .page_content a {
 	color: #2b2b2b;
 }
@@ -906,7 +910,7 @@ footer {
 .formbutton {
 	width: fit-content;
 	color: var(--color-secondary);
-	margin: 10px auto 0px auto;
+	/* margin: 10px auto 0px auto; */
 	padding: 12px 24px 12px 24px;
 	border: 2px var(--color-secondary) solid;
 	border-radius: 100px;
@@ -915,6 +919,7 @@ footer {
 	font-weight: 600;
 	line-height: 1.1em;
 	display: block;
+	text-decoration: none;
 }
 
 .formbutton:hover {
