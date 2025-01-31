@@ -640,18 +640,10 @@ footer {
 	background-color: var(--color-primary);
 	display: flex;
 	flex-direction: column;
-	column-gap: 80px;
+	row-gap: 80px;
 	padding: 80px 8px 40px 8px;
 	z-index: 999;
 }
-
-/* footer p{
-	padding-top: 10px;
-}
-
-footer a{
-	padding: 0px;
-} */
 
 .credit a{
 	color:#898989;
@@ -908,7 +900,7 @@ footer a{
 	padding: 12px 24px 12px 24px;
 	border: 2px var(--color-secondary) solid;
 	border-radius: 100px;
-	letter-spacing: 0.2em;
+	letter-spacing: 0.1em;
 	text-align: center;
 	font-weight: 600;
 	line-height: 1.1em;
