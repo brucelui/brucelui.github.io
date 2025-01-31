@@ -640,6 +640,7 @@ footer {
 	background-color: var(--color-primary);
 	display: flex;
 	flex-direction: column;
+	column-gap: 80px;
 	padding: 80px 8px 40px 8px;
 	z-index: 999;
 }
@@ -901,32 +902,22 @@ footer a{
 .story_5 {background-image: url(../images/bg7.jpg); background-position: right bottom;}
 
 .formbutton {
-	/* font-size: 0.8em; */
 	width: fit-content;
-	color: #FFF;
+	color: var(--color-secondary);
 	margin: 10px auto 0px auto;
 	padding: 12px 24px 12px 24px;
-	/* background-color: rgba(248, 231, 28, .2); */
-	/* background-color: #629677; */
-	/* background-color: #232323; */
-	border: 2px #FFF solid;
+	border: 2px var(--color-secondary) solid;
 	border-radius: 100px;
 	letter-spacing: 0.2em;
 	text-align: center;
 	font-weight: 600;
 	line-height: 1.1em;
+	display: block;
 }
 
 .formbutton:hover {
-	/* background-color: rgba(248, 231, 28, .5); */
-	/* background-color: #629677; */
-	background-color: #FFF;
-	color: #232323;
-	/* box-shadow: 0px 2px #FFFFFF; */
-	/* box-shadow: 0px 8px #629677; */
-	/* box-shadow: 0px 2px #98B6B1; */
-	/* box-shadow: 0px 8px 20px #232323; */
-	/* box-shadow: 0px 2px 20px #62967790; */
+	background-color: var(--color-secondary);
+	color: var(--color-primary);
 }
 
 .totheleft {
