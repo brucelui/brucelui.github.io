@@ -964,8 +964,9 @@ footer {
 	text-align: center;
 	font-weight: 600;
 	line-height: 1.1em;
-	display: block;
+	display: flex;
 	text-decoration: none;
+	column-gap: 8px;
 }
 
 .formbutton:hover {
