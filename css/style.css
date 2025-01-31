@@ -650,6 +650,12 @@ footer {
 	font-weight: 600;
 }
 
+.button_row {
+	display: flex;
+	flex-direction: row;
+	column-gap: 16px;
+}
+
 /* Contact Icons */
 
 /* .contactbutton {
