@@ -365,6 +365,7 @@ li {
 	border-radius: 40px;
 	overflow: hidden;
 	text-align: left;
+	color: var(--color-secondary);
 }
 
 /* .workBox:hover {
@@ -601,7 +602,6 @@ article {
 	flex-direction: column;
 	column-gap: 80px;
 	row-gap: 40px;
-	color: var(--color-secondary);
 }
 
 .content_container img {
@@ -647,7 +647,7 @@ article {
 }
 
 .cvVideo{
-	width: 600px;
+	width: 500px;
 	display: flex;
 	flex-direction: column;
 	align-content: space-around;
