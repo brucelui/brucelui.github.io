@@ -374,7 +374,16 @@ li {
 .workBoxContent {
 	display: flex;
 	flex-direction: column;
-	
+    justify-content: space-around;
+	padding:40px;
+	height:100%;
+}
+
+.workBoxContentTitle {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	row-gap: 16px;
 }
 
 .btn_Work {
@@ -481,7 +490,6 @@ li {
 	background-size: cover;
 	border-radius: 8px;
 	position: relative;
-	margin: 0px auto 24px auto;
 }
 
 .dribBox {
