@@ -125,19 +125,22 @@ li {
 }
 	
 .page_home {
-	width: 90vw;
-	height: 86vh;
+	width: 100%;
+	max-width: 1400px;
+	height: 460px;
 	position: relative;
 	background-image: url(../images/bg_main.jpg);
 	background-position: center;
 	background-size: cover;
-	background-color: #222;
-	color: #FFF;
-	text-align: center;
+	background-color: var(--color-primary);
+	color: var(--color-secondary);
+	text-align: left;
 	line-height: 2.5em;
 	display: block;
-	margin: 60px auto 0px auto;
+	margin: 80px;
+	border: 80px;
 	overflow: hidden;
+	border-radius: 40px;
 }
 
 #video-background {
