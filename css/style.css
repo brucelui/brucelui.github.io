@@ -98,7 +98,7 @@ header a.logo {
 	width: 40px;
 	height: 40px;
 	background-repeat: no-repeat;
-	margin: 10px auto 10px 16px;
+	margin: 20px auto 20px auto;
 	display: block;
 }
 
@@ -602,6 +602,7 @@ article {
 	display: flex;
 	flex-direction: row;
     justify-content: space-around;
+	margin-bottom: 40px;
 }
 
 .page_cv {
