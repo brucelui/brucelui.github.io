@@ -125,8 +125,6 @@ li {
 }
 	
 .page_home {
-	width: 100%;
-	max-width: 1400px;
 	height: 460px;
 	position: relative;
 	background-image: url(../images/bg_main.jpg);
@@ -949,11 +947,8 @@ footer a{
 
 h1 {
 	font-family: "Crimson Pro", serif;
-	color: #FFF;
-	font-size: 3.5em;
+	font-size: 64px;
 	font-weight: 400;
-	line-height: 1.1em;
-	margin: 0px;
 }
 
 h2 {
@@ -967,10 +962,7 @@ h2 {
 
 h3 {
 	font-family: "Crimson Pro", serif;
-	color: #FFF;
-	font-size: 1.5em;
-	line-height: 1.4em;
-	font-weight: 400;
+	font-size: 24px;
 }
 
 h4 {
