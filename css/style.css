@@ -138,7 +138,7 @@ li {
 	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: space-between;
-	margin: 80px;
+	margin: 80px 80px 0px 80px;
 	padding: 80px;
 	overflow: hidden;
 	border-radius: 40px;
@@ -595,6 +595,11 @@ article {
 
 .contact_container {
 	padding: 40px 0px 10px 0px;
+}
+
+.container_cv {
+	display: flex;
+	flex-direction: row;
 }
 
 .page_cv {
