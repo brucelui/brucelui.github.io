@@ -377,6 +377,7 @@ li {
     justify-content: space-around;
 	padding:40px;
 	height:100%;
+	align-items: flex-end;
 }
 
 .workBoxContentTitle {
@@ -592,14 +593,15 @@ article {
 }
 
 .content_container { /* MAIN CONTAINER */
-	max-width: 1080px;
-	margin: 0px auto 0px auto;
+	max-width: 1000px;
+	margin: 80px auto 80px auto;
 	text-align: center;
 	padding: 0px 0px 80px 0px;
 	display: flex;
 	flex-direction: column;
 	column-gap: 80px;
 	row-gap: 40px;
+	color: var(--color-secondary);
 }
 
 .content_container img {
