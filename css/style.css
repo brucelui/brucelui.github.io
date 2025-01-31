@@ -949,6 +949,7 @@ h1 {
 	font-family: "Crimson Pro", serif;
 	font-size: 64px;
 	font-weight: 400;
+	margin: 0;
 }
 
 h2 {
@@ -958,22 +959,19 @@ h2 {
 	font-weight: 700;
 	line-height: 1.2em;
 	display:inline;
+	margin: 0;
 }
 
 h3 {
 	font-family: "Crimson Pro", serif;
 	font-size: 24px;
+	margin: 0;
 }
 
 h4 {
-	font-size: 1em;
-	font-family: "Crimson Pro", serif;
-	color: #4a4a4a;
-	font-weight: 700;
-	/* font-style: italic; */
-	/* letter-spacing: 1.2px; */
-	display:inline;
-	text-align: left;
+	font-size: 24px;
+	font-weight: 500;
+	margin: 0;
 }
 
 h5 {
