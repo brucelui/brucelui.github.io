@@ -46,12 +46,12 @@ a:hover{
 }
 
 svg {
-	width: 24;
-	height: 24;
+	width: 24px;
+	height: 24px;
 	fill: var(--color-secondary)
 }
 
-a:hover svg{
+svg:hover {
 	color: var(--color-primary)
 }
 
