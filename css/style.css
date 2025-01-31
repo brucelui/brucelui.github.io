@@ -146,6 +146,10 @@ li {
 	border-radius: 40px;
 }
 
+.page_home h4{
+	text-align: right;
+}
+
 #video-background {
 	clip: rect(0px,60px,200px,0px);
 }
@@ -191,6 +195,10 @@ li {
 .brightness {
     -webkit-filter: brightness(.8);
     filter: brightness(.5);
+}
+
+.texttoright{
+	text-align: right;
 }
 
 #video-background { /* Video Settings */
