@@ -13,7 +13,7 @@
 }
 
 body {
-	font-family: 'Lato', sans-serif;
+	font-family: "Noto Sans", serif;
 	font-size: 16px;
 	font-weight: 400;
 	/* letter-spacing: 1px; */
@@ -936,7 +936,7 @@ footer a{
 /* Headings */
 
 h1 {
-	font-family: 'Martel', sans-serif;
+	font-family: "Crimson Pro", serif;
 	color: #FFF;
 	font-size: 3.5em;
 	font-weight: 400;
@@ -945,7 +945,7 @@ h1 {
 }
 
 h2 {
-	font-family: 'Karla', 'Lato', 'Raleway', sans-serif;
+	font-family: "Crimson Pro", serif;
 	color: #4A4A4A;
 	font-size: 1.2em;
 	font-weight: 700;
@@ -954,7 +954,7 @@ h2 {
 }
 
 h3 {
-	font-family: 'Martel', sans-serif;
+	font-family: "Crimson Pro", serif;
 	color: #FFF;
 	font-size: 1.5em;
 	line-height: 1.4em;
@@ -963,7 +963,7 @@ h3 {
 
 h4 {
 	font-size: 1em;
-	font-family: 'Martel', sans-serif;
+	font-family: "Crimson Pro", serif;
 	color: #4a4a4a;
 	font-weight: 700;
 	/* font-style: italic; */
@@ -973,7 +973,7 @@ h4 {
 }
 
 h5 {
-	font-family: 'Martel', sans-serif;
+	font-family: "Crimson Pro", serif;
 	font-size: 1.75em;
 	font-weight: 700;
 	color: #FFFFFF;
@@ -982,7 +982,7 @@ h5 {
 }
 
 h6 {
-	font-family: 'Martel', sans-serif;
+	font-family: "Crimson Pro", serif;
 	font-size: 1.75em;
 	font-weight: 400;
 	line-height: 1.2em;
@@ -992,7 +992,7 @@ h6 {
 }
 
 h7 {
-	font-family: 'Martel', sans-serif;
+	font-family: "Crimson Pro", serif;
 	/*color: #4A5F68;*/
 	font-size: 2.5em;
 	font-weight: 400;
@@ -1011,7 +1011,7 @@ h8 {
 }
 
 h9 {
-	font-family: 'Karla', 'Lato', 'Raleway', sans-serif;
+	font-family: "Crimson Pro", serif;
 	font-size: 0.9em;
 	font-weight: 700;
 	color: #FFFFFF;
@@ -1020,7 +1020,7 @@ h9 {
 }
 
 h10 {
-	font-family: 'Karla', 'Lato', 'Raleway', sans-serif;
+	font-family: "Crimson Pro", serif;
 	font-size: 1.8em;
 	font-weight: 600;
 	color: #4A4A4A;
