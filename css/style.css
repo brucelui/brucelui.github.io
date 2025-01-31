@@ -45,7 +45,7 @@ a:hover{
 	color: var(--color-tertiary);
 }
 
-a svg {
+svg {
 	width: 24;
 	height: 24;
 	fill: var(--color-secondary)
