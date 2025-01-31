@@ -648,7 +648,6 @@ footer {
 	background-color: var(--color-primary);
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	row-gap: 80px;
 	padding: 80px 8px 40px 8px;
 	z-index: 999;
@@ -663,6 +662,7 @@ footer {
 	display: flex;
 	flex-direction: row;
 	column-gap: 16px;
+	justify-content: center;
 }
 
 /* Contact Icons */
