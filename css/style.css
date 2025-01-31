@@ -140,7 +140,7 @@ li {
 	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: space-between;
-	margin: 80px 80px 0px 80px;
+	margin: 80px 80px 40px 80px;
 	padding: 80px;
 	overflow: hidden;
 	border-radius: 40px;
@@ -352,7 +352,6 @@ li {
 	/* height: 450px; */
 	background-position: center center;
 	background-size: cover;
-	margin: 20px auto 20px auto;
     /* box-shadow: 0px 5px 10px #999999; */
 	border-width: 0px;
 	border-radius: 16px;
@@ -573,11 +572,11 @@ article {
 	max-width: 1080px;
 	margin: 0px auto 0px auto;
 	text-align: center;
-	padding: 80px 0px 80px 0px;
+	padding: 40px 0px 40px 0px;
 	display: flex;
 	flex-direction: column;
 	column-gap: 80px;
-
+	row-gap: 40px;
 }
 
 .content_container img {
@@ -648,11 +647,6 @@ article {
 
 .cvPara {
 	text-align: left;
-	margin: 20px auto 20px auto;
-}
-.cvPara p {
-	line-height: 1em;
-	padding: 5px 0px 5px 0px;
 }
 
 /* .cvPara  */
