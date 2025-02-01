@@ -903,7 +903,7 @@ footer {
 	padding: 16px 16px 16px 16px;
 }
 
-#btm_process a{
+/* #btm_process a{
 	letter-spacing: 0em;
 	color: #4a4a4a;
 }
@@ -914,7 +914,7 @@ footer {
 
 #btm_process p{
 	line-height: 40px;
-}
+} */
 
 #processA, #processB, #processC {
 	font-weight: 800;
