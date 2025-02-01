@@ -207,10 +207,10 @@ li {
     filter: brightness(.5);
 }
 
-.texttoright{
+.texttoright {
 	display: flex;
 	flex-direction: column;
-	column-gap: 2px;
+	row-gap: 8px;
 	text-align: right;
 }
 
@@ -1013,6 +1013,7 @@ h4 {
 	font-size: 24px;
 	font-weight: 600;
 	margin: 0;
+	line-height: 1.2;
 	/* text-align: right; */
 }
 
