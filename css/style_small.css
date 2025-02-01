@@ -42,9 +42,9 @@ p {
 	font-size: 1em;
 }
 
-/* .page_home {
-	margin: 0px auto 0px auto;
-} */
+.page_home {
+	margin: 80px 16px 16px 16px;
+}
 
 .page_home .logo_home {
 	display: none;
@@ -72,7 +72,7 @@ p {
 }
 
 .content_container { /* MAIN CONTAINER */
-	padding: 60px 0px 60px 0px;
+	margin: 0px 16px 0px 16px;
 }
 
 .workChild{
@@ -341,6 +341,19 @@ ul li:hover ul {
 .story_4 .story_container{
 	top: 15%;
 }
+
+h1 {
+	font-size: 32px;
+}
+
+h2 {
+	font-size: 21px;
+}
+
+h4 {
+	font-size: 21px;
+}
+
 
 h6 {
 	font-size: 1.25em;
