@@ -137,7 +137,6 @@ li {
 }
 	
 .page_home {
-	height: 460px;
 	position: relative;
 	background-image: url(../images/bg_main.jpg);
 	background-position: center;
@@ -149,6 +148,7 @@ li {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
+	row-gap: 32px;
 	justify-content: space-between;
 	margin: 80px 80px 80px 80px;
 	padding: 80px;
@@ -903,19 +903,6 @@ footer {
 	padding: 16px 16px 16px 16px;
 }
 
-/* #btm_process a{
-	letter-spacing: 0em;
-	color: #4a4a4a;
-}
-
-#btm_process a:hover {
-	color: #666;
-}
-
-#btm_process p{
-	line-height: 40px;
-} */
-
 #processA, #processB, #processC {
 	font-weight: 800;
 	letter-spacing: 3px;
@@ -923,6 +910,7 @@ footer {
 	background-color: rbga(0,0,0,0);
 	transition: background-color 0.2s linear 0s;
 	border-radius: 20px;
+	display: block;
 }
 
 /* Story Pages */
@@ -973,7 +961,7 @@ footer {
 	letter-spacing: 0.1em;
 	text-align: center;
 	font-weight: 600;
-	line-height: 1.1em;
+	line-height: 1.1;
 	display: flex;
 	text-decoration: none;
 	column-gap: 8px;
@@ -1014,7 +1002,7 @@ h2 {
 	font-family: "Crimson Pro", serif;
 	font-size: 36px;
 	font-weight: 400;
-	line-height: 40px;
+	line-height: 1.2;
 	margin: 0;
 }
 
@@ -1041,7 +1029,7 @@ h6 {
 	font-family: "Crimson Pro", serif;
 	font-size: 1.75em;
 	font-weight: 400;
-	line-height: 1.2em;
+	line-height: 1.2;
 	/*letter-spacing: .1em;*/
 	display: inline;
 	color: #232323;

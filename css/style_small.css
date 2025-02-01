@@ -35,8 +35,8 @@ header a:hover {
 }
 
 .page_home {
-	width: 100%;
-	padding: 16px;
+	width: auto;
+	padding: 24px;
 }
 
 nav a{
@@ -212,6 +212,7 @@ article {
 
 .container_cv {
 	flex-direction: column;
+	row-gap: 16px;
 }
 
 .cvVideo {
@@ -356,21 +357,21 @@ ul li:hover ul {
 }
 
 h1 {
-	font-size: 32px;
+	font-size: 48px;
 }
 
 h2 {
-	font-size: 21px;
+	font-size: 32px;
+}
+
+h3 {
+	font-size: 20px;
 }
 
 h4 {
-	font-size: 21px;
+	font-size: 20px;
 }
 
-
-h6 {
-	font-size: 1.25em;
-}
-h7 {
-	font-size: 1em;
+h5 {
+	font-size: 16px;
 }
