@@ -215,6 +215,10 @@ article {
 	width: auto;
 }
 
+.cvPara {
+	min-width: auto;
+}
+
 .worknav_container{
 	width: 100%;
 }
