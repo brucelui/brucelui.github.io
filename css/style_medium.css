@@ -13,6 +13,12 @@ nav a{
 	padding: 20px 20px 0px 0px;
 }
 
+.page_home {
+	width: auto;
+	padding: 40px;
+	margin: 80px 40px 40px 40px;
+}
+
 .page_home .logo_home {
 	display: none;
 }
@@ -45,7 +51,7 @@ nav a{
 .content_container {
 	max-width: 80%;
 	text-align: center;
-	padding: 100px 0px 100px 0px;
+	padding: 40px 0px 40px 0px;
 }
 
 .workBox {
