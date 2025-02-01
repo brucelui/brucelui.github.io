@@ -34,6 +34,11 @@ header a:hover {
 	color: #000;
 }
 
+.page_home {
+	width: 100%;
+	padding: 16px;
+}
+
 nav a{
 	padding: 0px;
 }
@@ -203,6 +208,10 @@ article {
 
 .cv_container {
 	margin-top: 0;
+}
+
+.container_cv {
+	flex-direction: column;
 }
 
 .worknav_container{
