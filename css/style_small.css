@@ -206,10 +206,6 @@ article {
 	height: auto;
 }
 
-.cv_container {
-	margin-top: 0;
-}
-
 .container_cv {
 	flex-direction: column;
 	row-gap: 16px;

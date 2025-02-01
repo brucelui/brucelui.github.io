@@ -49,8 +49,6 @@ nav a{
 }
 
 .content_container {
-	flex-direction: column;
-	row-gap: 16px;
 	margin: 40px;
 }
 
@@ -136,8 +134,9 @@ article {
           columns: 1 200px;
 }
 
-.cv_container {
-	margin-top: 0;
+.container_cv {
+	flex-direction: column;
+	row-gap: 16px;
 }
 
 .worknav_container{
