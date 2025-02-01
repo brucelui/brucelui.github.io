@@ -208,6 +208,9 @@ li {
 }
 
 .texttoright{
+	display: flex;
+	flex-direction: column;
+	column-gap: 2px;
 	text-align: right;
 }
 
