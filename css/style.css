@@ -882,9 +882,9 @@ footer {
 
 #btm_process {
 	position: fixed;
-	width: 480px;
+	width: fit-content;
 	z-index: 3;
-	bottom: -10px;
+	bottom: 0px;
     left: 50%;
     -webkit-transform: translate(-50%, 0%);
     transform: translate(-50%, 0%);
@@ -899,7 +899,8 @@ footer {
 	column-gap: 16px;
 	color: var(--color-primary);
 	transition: height 0.2s linear 0s;
-	border-radius: 40px 40px 0px 0px;
+	border-radius: 20px 20px 0px 0px;
+	padding: 16px 16px 16px 16px;
 }
 
 #btm_process a{
