@@ -645,6 +645,7 @@ article {
 	flex-direction: row;
     justify-content: space-around;
 	margin-bottom: 40px;
+	column-gap: 16px;
 }
 
 .page_cv {
