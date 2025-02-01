@@ -214,6 +214,10 @@ article {
 	flex-direction: column;
 }
 
+.cvVideo {
+	width: auto;
+}
+
 .worknav_container{
 	width: 100%;
 }
