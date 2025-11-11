@@ -17,7 +17,7 @@ nav a{
 	width: auto;
 	padding: 40px;
 	margin: 80px 40px 40px 40px;
-	row-gap: 80px;
+	row-gap: 120px;
 }
 
 .page_home .logo_home {
@@ -28,8 +28,12 @@ nav a{
 	height: 10%;
 }
 
+.texttoright {
+	row-gap: 16px;
+}
+
 .page_content{
-	padding-top: 80px;
+	padding: 0px 40px 0px 40px;
 }
 
 .page_story {
@@ -49,12 +53,76 @@ nav a{
 	width: 80%;
 }
 
-.content_container {
-	margin: 40px;
+.mainWorkBox {
+	flex-direction: column-reverse;
+	justify-content: flex-end;
+	row-gap: 40px;
+	height: 640px;
+}
+
+.mainWorkThumbnail {
+	transform: translateY(-200px) scale(0.6);
+	min-width: 440px;
+}
+
+.mainWorkVideo {
+	transform: none;
+	margin: 0px;
+}
+
+.mainWorkBox:hover .mainWorkThumbnail, 
+.mainWorkBox:focus .mainWorkThumbnail
+ {
+	transform: scale(0.6) rotateX(-10deg) rotateY(20deg) rotateZ(-2deg) translateY(-400px) skewX(0deg) skewY(0deg);
+}
+
+.mainWorkBox:hover .mainWorkVideo, 
+.mainWorkBox:focus .mainWorkVideo
+ {
+	transform: none;
 }
 
 .workBox {
 	height: 360px;
+}
+
+.workGetTech {
+	height: auto;
+}
+
+/* Project Pages */
+
+.projectTopContainer {
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+.projectTopContent {
+	flex-direction: column;
+	row-gap: 24px;
+}
+
+.subWorkSection {
+	flex-direction: column;
+	row-gap: 16px;
+}
+
+.subWorkBox {
+	max-width: none;
+}
+
+.subWorkThumbnail {
+	height: 0px;
+	display: none;
+}
+
+.projectSection {
+	flex-direction: column;
+	padding: 24px 8px 24px 8px;
+}
+
+.projectSectionGroups{
+	flex-direction: column;
 }
 
 .workMain {
@@ -137,7 +205,7 @@ article {
 
 .container_cv {
 	flex-direction: column;
-	row-gap: 16px;
+	row-gap: 40px;
 }
 
 .worknav_container{
@@ -163,34 +231,4 @@ footer img {
 }
 .formobile {
 	display: block;
-}
-
-#btm_process {
-	width: 100%;
-}
-
-/* Story Pages */
-
-.story_block .story_1, .story_2, .story_3, .story_4, .story_5{
-	height: 80vh;
-	font-size: .9em;
-	line-height: 1.6em;
-}
-
-.story_container {
-	width: 80%;
-	position: absolute;
-	margin: auto;
-	top: 0; right: 0; bottom: 0; left: 0;
-}
-
-.story_4 .story_container{
-	top: -20%;
-}
-
-h6 {
-	font-size: 1.75em;
-}
-h7 {
-	font-size: 1.25em;
 }
