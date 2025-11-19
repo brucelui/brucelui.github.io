@@ -9,6 +9,19 @@
   const randomInRange = (min, max) => Math.random() * (max - min) + min;
 
   const triggerConfetti = () => {
+    // Track confetti event in Google Analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'confetti_triggered', {
+        'event_category': 'engagement',
+        'event_label': 'scroll_to_bottom'
+      });
+    }
+    
+    // Also track in Universal Analytics (if still in use)
+    if (typeof ga !== 'undefined') {
+      ga('send', 'event', 'engagement', 'confetti_triggered', 'scroll_to_bottom');
+    }
+
     const animationEnd = Date.now() + OPTIONS.animationDuration;
     const interval = setInterval(() => {
       const timeLeft = animationEnd - Date.now();
