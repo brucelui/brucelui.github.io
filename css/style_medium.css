@@ -140,6 +140,12 @@ nav a{
 	flex-direction: column;
 }
 
+.projectSectionLeft {
+	width: 100%;
+	max-width: none;
+	padding: 24px 16px 16px 8px;
+}
+
 .workMain {
 	height: 800px;
 }
@@ -231,7 +237,7 @@ footer img {
 	width: 10%;
 }
 
-.top_block  .top_ensemble, .top_338, .top_info, .top_toro, .top_zara{
+.top_block{
 	height: 650px;
 }
 	
