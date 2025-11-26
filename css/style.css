@@ -472,7 +472,8 @@ nav a{
 	background-repeat: no-repeat;
 }
 
-.workEcosia { background-image: url(../images/cover_ecosia.jpg); }
+.workEcosia { background-image: url(../images/cover_ecosia.jpg);
+height: 400px; }
 .workTrivago { background-image: url(../images/cover_trivago.jpg); }
 .workN26 { background-image: url(../images/cover_n26.jpg); }
 .workGetTech{ background-image: url(../images/cover_gettech.jpg);}
