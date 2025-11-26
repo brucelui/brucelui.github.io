@@ -43,7 +43,8 @@ a {
 }
 
 a:hover{
-	color: var(--color-tertiary);
+	color: var(--color-black);
+	text-decoration: underline 3px;
 }
 
 svg {
