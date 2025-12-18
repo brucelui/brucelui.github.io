@@ -69,13 +69,18 @@ nav a{
 .mainWorkBox {
 	flex-direction: column-reverse;
 	justify-content: flex-end;
-	row-gap: 40px;
+	row-gap: 0px;
 	height: 640px;
+}
+
+.mainWorkContent{
+	padding-bottom: 0px;
 }
 
 .mainWorkThumbnail {
 	transform: translateY(-200px) scale(0.6);
 	min-width: 440px;
+	margin: 0px auto 0px auto;
 }
 
 .mainWorkVideo {
