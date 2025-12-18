@@ -341,7 +341,7 @@ nav a{
 	flex-direction: row;
 	column-gap: 40px;
 	text-align: left;
-	padding: 40px;
+	padding: 40px 40px 0px 40px;
     transition: all .6s ease-out;
 	position: relative;
 }
@@ -351,18 +351,21 @@ nav a{
 	flex-direction: column;
 	justify-content: center;
 	row-gap: 40px;
+	flex: 1; 
+	padding-bottom: 40px;
 
 }
 
 .mainWorkThumbnail {
 	display: block;
 	justify-content: center;
-	transform: scale(0.8);
+	transform: scale(1);
     -webkit-transition: all .3s ease-out;
     -moz-transition: all .3s ease-out;
     -o-transition: all .3s ease-out;
     transition: all .3s ease-out;
-	margin: 0 auto;
+	padding: 20px 10px 0px 10px;
+	flex: 1; 
 }
 
 .mainWorkVideo {
@@ -373,7 +376,7 @@ nav a{
 .mainWorkBox:hover .mainWorkThumbnail, 
 .mainWorkBox:focus .mainWorkThumbnail
  {
-	transform: scale(0.8) rotateX(-10deg) rotateY(20deg) rotateZ(-2deg) translateY(-16px) skewX(0deg) skewY(0deg);
+	transform: scale(1) rotateX(-10deg) rotateY(20deg) rotateZ(-2deg) translateY(-16px) skewX(0deg) skewY(0deg);
 }
 
 .mainWorkBox:hover .mainWorkVideo, 
@@ -478,6 +481,12 @@ height: 400px; }
 .workN26 { background-image: url(../images/cover_n26.jpg); }
 .workGetTech{ background-image: url(../images/cover_gettech.jpg);}
 
+.mainWorkBox:hover .deviceN26,
+.mainWorkBox:focus .deviceN26 {
+	content: url(../images/top_N26_2.png);
+    transition: all .6s;
+}
+
 .workChild{
 	height:100%;
 	width:100%;
@@ -501,6 +510,8 @@ height: 400px; }
   transform: translateX(-5%);
   transform: scale(1.1);
 }
+
+
 
 .workContent {
 	height: 100%;
