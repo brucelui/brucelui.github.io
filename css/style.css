@@ -475,8 +475,7 @@ nav a{
 	background-repeat: no-repeat;
 }
 
-.workEcosia { background-image: url(../images/cover_ecosia.jpg);
-height: 400px; }
+.workEcosia { background-image: url(../images/cover_ecosia.jpg);}
 .workTrivago { background-image: url(../images/cover_trivago.jpg); }
 .workN26 { background-image: url(../images/cover_n26.jpg); }
 .workGetTech{ background-image: url(../images/cover_gettech.jpg);}
@@ -517,7 +516,7 @@ height: 400px; }
 	height: 100%;
 	width: 100%;
 	position: relative;
-	z-index: 1;
+	z-index: 2;
 	/* top:0; */
 	transform: translateY(-100%);
 }
@@ -911,6 +910,7 @@ footer {
 	background-size: auto;
 	position: sticky;
 	top: 0px;
+	z-index: 2;
 }
 
 .projectSection {
@@ -959,6 +959,7 @@ footer {
 	display: flex;
 	flex-direction: column;
 	padding-bottom: 40px;
+	z-index: 1;
 }
 
 .projTitle {
