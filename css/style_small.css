@@ -95,13 +95,19 @@ p {
 /* 3. Featured work & components */
 
 .mainWorkBox {
+	flex-direction: column;
+	justify-content: none;
+	row-gap: 16px;
+}
+
+.mainWorkThumbnailContent {
 	flex-direction: column-reverse;
-	justify-content: flex-end;
-	row-gap: 0px;
+	height: auto;
 }
 
 .mainWorkContent{
 	padding-bottom: 0px;
+	row-gap: 16px;
 }
 
 .mainWorkThumbnail {
@@ -125,7 +131,9 @@ p {
 	transform: none;
 }
 
-
+.appStats {
+	display: none;
+}
 /* 4. Project pages & CV */
 
 .projectTopContainer {

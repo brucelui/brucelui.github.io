@@ -338,12 +338,29 @@ nav a{
 	background-color: var(--color-primary);
 	color: var(--color-secondary);
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	column-gap: 40px;
 	text-align: left;
 	padding: 40px 40px 0px 40px;
     transition: all .6s ease-out;
 	position: relative;
+}
+
+.mainWorkTitle {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	column-gap: 16px;
+	z-index: 2;
+}
+
+.mainWorkThumbnailContent {
+	display: flex;
+	flex-direction: row;
+	column-gap: 40px;
+	height: stretch;
 }
 
 .mainWorkContent {
@@ -480,9 +497,21 @@ nav a{
 .workN26 { background-image: url(../images/cover_n26.jpg); }
 .workGetTech{ background-image: url(../images/cover_gettech.jpg);}
 
+.mainWorkBox:hover .deviceEcosia,
+.mainWorkBox:focus .deviceEcosia {
+	content: url(../images/top_ecosia2.png);
+    transition: all .6s;
+}
+
 .mainWorkBox:hover .deviceN26,
 .mainWorkBox:focus .deviceN26 {
 	content: url(../images/top_N26_2.png);
+    transition: all .6s;
+}
+
+.mainWorkBox:hover .deviceTrivago,
+.mainWorkBox:focus .deviceTrivago {
+	content: url(../images/top_trivago2.png);
     transition: all .6s;
 }
 
@@ -581,6 +610,49 @@ nav a{
 	display: flex;
 	flex-direction: column;
 	column-gap: 16px;
+}
+
+.appStats {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 8px;
+}
+
+.appStat {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	min-width: 180px;
+}
+
+.appStat-label {
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.25;
+}
+
+.appStats a {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.appStat-label a:hover {
+	text-decoration-thickness: 2px;
+}
+
+.star-rating {
+	display: inline-flex;
+	align-items: center;
+	line-height: 1;
+}
+
+.star-rating .half-star {
+	display: inline-block;
+	width: 0.5em;
+	overflow: hidden;
+	line-height: 1;
+	flex-shrink: 0;
 }
 
 .img_showcase{
