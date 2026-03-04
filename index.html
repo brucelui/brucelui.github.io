@@ -1,103 +1,62 @@
 <!DOCTYPE html>
 
 <!--Handcoded by Bruce Lui-->
-<html>
+<html lang="en">
 	<head>
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-T2YZY8NMXF"></script>
-		<script>
-		  window.dataLayer = window.dataLayer || [];
-		  function gtag(){dataLayer.push(arguments);}
-		  gtag('js', new Date());
-
-		  gtag('config', 'G-T2YZY8NMXF');
-		</script>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimun-scale=1.0, initial-scale=1.0" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=1.0, initial-scale=1.0" />
 		<meta name="author" content="Bruce Lui">
 		<meta name="keywords" content="Bruce Lui, brucelui, siat, portfolio, design, ux, ui, product design" />
-	    <meta name="description" content="Product Designer.">
+		<meta name="description" content="Product Designer.">
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="Bruce Lui - Product Designer">
+		<meta property="og:description" content="Product Designer.">
+		<meta property="og:url" content="https://brucelui.github.io/">
+		
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="Bruce Lui - Product Designer">
+		<meta name="twitter:description" content="Product Designer.">
 	
 		<title>Bruce Lui</title>
 		
-		<!-- CCS -->
+		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="css/foundation.min.css" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" type="text/css" media="only screen and (min-width:50px) and (max-width:599px)" href="css/style_small.css" />
 		<link rel="stylesheet" type="text/css" media="only screen and (min-width:600px) and (max-width:980px)" href="css/style_medium.css" />
 		
 		<!-- FONTS -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Karla|Lato|Martel" rel="stylesheet">
 		
-		<!-- JS -->
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src="js/headroom.js"></script>
-		<script src="js/java.js"></script>
-		<script src="js/objectFitPolyfill.basic.min.js"></script>
-		<script>
-			$(function() {
-			  $('a[href*=#]:not([href=#])').click(function() {
-			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		<!-- Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-T2YZY8NMXF"></script>
+		<script src="js/analytics.js"></script>
 		
-			      var target = $(this.hash);
-			      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-			      if (target.length) {
-			        $('html,body').animate({
-			          scrollTop: target.offset().top -40
-			        }, 500);
-			        return false;
-			      }
-			    }
-			  });
-			});
-		</script>
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-		  ga('create', 'UA-81862116-1', 'auto');
-		  ga('send', 'pageview');
-
-		</script>
-		
+		<!-- Smooth Scroll -->
+		<script src="js/smooth-scroll.js" defer></script>
 	</head>
 
 	<body>
 		<header>
-			<a class="logo" href="./index.html"></a>
+			<a class="logo" href="./index.html" aria-label="Home"></a>
 		</header>
-
-		<!-- <div id="header">
-			<nav>
-				<ul class="menu_short">
-					<li><a href="./index.html#goto_portfolio">works</a></li>
-					<li><a href="#goto_contact">contact</a></li>
-				</ul>
-				<ul class="menu_full">
-					<li><a href="./index.html#goto_home">home</a></li>
-					<li><a href="./index.html#goto_portfolio">works</a></li>
-					<li><a href="./story.html">about</a></li>
-					<li><a href="./index.html#goto_cv">values</a></li>
-					<li><a href="#goto_contact">contact</a></li>
-				</ul>
-				</div>
-			</nav>
-		</div> -->
 		
 		<section id="goto_home">
 			<div class="page_home">
-					<div>
-						<h1>Bruce Lui...</h1>
-						<h3>he/him</h3>
-					</div>
-					<div class="texttoright">
-						<h4>... works as a Senior Product Designer at Ecosia.</h4>
-						<h4>... is a Canadian living in Amsterdam, Netherlands.</h4>
-						<h4>... has no opinion on having pineapples on his pizzas.</h4>
-					</div>
+				<div>
+					<h1>Bruce Lui...</h1>
+					<h3>he/him</h3>
+				</div>
+				<div class="texttoright">
+					<h4>... works as a Senior Product Designer at Ecosia.</h4>
+					<h4>... is a Canadian living in Amsterdam, Netherlands.</h4>
+					<h4>... has no opinion on having pineapples on his pizzas.</h4>
+				</div>
 			</div>
 		</section>
 		
@@ -106,79 +65,162 @@
 				<div class="content_container">
 					<div class="section_title"><h3>his featured works</h3></div>
 
-					<div class="mainWorkBox workN26">
-						<a href="./n26.html" class="stretched-link"></a>
-						<div class="mainWorkThumbnail">
-							<img src="images/n26_top.png">
-						</div>
-						<div class="mainWorkContent">
+					<!-- Ecosia -->
+					<div class="mainWorkBox workEcosia">
+						<a href="./ecosia.html" class="stretched-link" aria-label="View Ecosia case study"></a>
+						<div class="mainWorkTitle">
 							<div class="appTitle">
-								<div class="appIcon appIconN26"></div>
+								<div class="appIcon appIconEcosia" aria-hidden="true"></div>
+								<div class="appTitleDescription">
+									<h4>Ecosia</h4>
+									<h5>green tech, search engine</h5>
+								</div>
+							</div>
+							<div class="appStats">
+								<div class="appStat">
+									<span class="appStat-label">20M+</span>
+									<span class="appStat-label">Monthly Active Users</span>
+								</div>
+								<div class="appStat">
+									<span class="appStat-label"><span class="star-rating">&#9733;&#9733;&#9733;&#9733;<span class="half-star">&#9733;</span></span></span> 
+									<span class="appStat-label"><a href="https://apps.apple.com/us/app/ecosia-search-to-plant-trees/id670881887" target="_blank" rel="noopener noreferrer">7.7k+ reviews↗</a></span>
+								</div>
+								<div class="appStat">
+									<span class="appStat-label"><a href="https://www.linkedin.com/posts/ecosia_ecosia-wins-the-german-sustainability-award-activity-7268245915767881729-sWXQ" target="_blank" rel="noopener noreferrer">German Sustainability Award 2024↗</a></span>
+								</div>
+							</div>
+						</div>
+						<div class="mainWorkThumbnailContent">
+							<div class="mainWorkThumbnail">
+								<img class="deviceEcosia" src="images/top_ecosia1.png" alt="Ecosia search engine interface">
+							</div>
+							<div class="mainWorkContent">
+								<h2>making it easier to fight climate change</h2>
+								<div class="btn_gotoCaseStudy">
+									<a href="./ecosia.html" class="formbutton">see case study 
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true">
+											<path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/>
+										</svg>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- N26 -->
+					<div class="mainWorkBox workN26">
+						<a href="./n26.html" class="stretched-link" aria-label="View N26 case study"></a>
+						<div class="mainWorkTitle">
+							<div class="appTitle">
+								<div class="appIcon appIconN26" aria-hidden="true"></div>
 								<div class="appTitleDescription">
 									<h4>N26</h4>
 									<h5>fintech, digital banking</h5>
 								</div>
 							</div>
-							<h2>engaging ways on how to save money</h2>
-							<div class="btn_gotoCaseStudy">
-								<a href="./n26.html" class="formbutton">see case study 
-									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" >
-										<path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/>
-									</svg>
-								</a>
+							<div class="appStats">
+								<div class="appStat">
+									<span class="appStat-label">2M+</span>
+									<span class="appStat-label">Monthly Active Users</span>
+								</div>
+								<div class="appStat">
+									<span class="appStat-label"><span class="star-rating">&#9733;&#9733;&#9733;&#9733;<span class="half-star">&#9733;</span></span></span> 
+									<span class="appStat-label"><a href="https://apps.apple.com/us/app/n26-love-your-bank/id956857223" target="_blank" rel="noopener noreferrer">11k+ reviews↗</a></span>
+								</div>
+								<div class="appStat">
+									<span class="appStat-label"><a href="https://www.forbes.com/sites/antoinegara/2021/04/13/the-worlds-best-banks-2021-financiers-to-the-looming-economic-recovery/" target="_blank" rel="noopener noreferrer">Forbes World’s Best Bank 2021↗</a></span>
+								</div>
+							</div>
+						</div>
+						<div class="mainWorkThumbnailContent">
+							<div class="mainWorkThumbnail">
+								<!-- <div class="deviceN26""></div> -->
+								<img class ="deviceN26" src="images/top_N26_1.png" alt="N26 banking app interface">
+							</div>
+							<div class="mainWorkContent">
+								<h2>engaging ways on how to save money</h2>
+								<div class="btn_gotoCaseStudy">
+									<a href="./n26.html" class="formbutton">see case study 
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true">
+											<path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/>
+										</svg>
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
 
+					<!-- trivago -->
 					<div class="mainWorkBox workTrivago">
-						<a href="./trivago.html" class="stretched-link"></a>
-						<div class="mainWorkThumbnail">
-							<img src="images/trivago_top.png">
-						</div>
-						<div class="mainWorkContent">
+						<a href="./trivago.html" class="stretched-link" aria-label="View trivago case study"></a>
+						<div class="mainWorkTitle">
 							<div class="appTitle">
-								<div class="appIcon appIconTrivago"></div>
+								<div class="appIcon appIconTrivago" aria-hidden="true"></div>
 								<div class="appTitleDescription">
 									<h4>trivago</h4>
 									<h5>travel, hotel search</h5>
 								</div>
 							</div>
-							<h2>helping travelers find their ideal hotel</h2>
-							<div class="btn_gotoCaseStudy">
-								<a href="./trivago.html" class="formbutton">see case study 
-									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" >
-										<path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/>
-									</svg>
-								</a>
+							<div class="appStats">
+								<div class="appStat">
+									<span class="appStat-label">55M+</span>
+									<span class="appStat-label">Monthly Active Users</span>
+								</div>
+								<div class="appStat">
+									<span class="appStat-label"><span class="star-rating">&#9733;&#9733;&#9733;&#9733;<span class="half-star">&#9733;</span></span></span> 
+									<span class="appStat-label"><a href="https://apps.apple.com/us/app/trivago-compare-hotel-prices/id376888389" target="_blank" rel="noopener noreferrer">256k+ reviews↗</a></span>
+								</div>
+								<div class="appStat">
+									<span class="appStat-label"><a href="https://www.mobileappdaily.com/products/best-hotel-booking-apps" target="_blank" rel="noopener noreferrer">MobileAppDaily Best  Hotel Booking App↗</a></span>
+								</div>
+							</div>
+						</div>
+						<div class="mainWorkThumbnailContent">
+							<div class="mainWorkThumbnail">
+								<img class="deviceTrivago" src="images/top_trivago1.png" alt="trivago hotel search interface">
+							</div>
+							<div class="mainWorkContent">
+								<h2>helping travelers find their ideal hotel</h2>
+								<div class="btn_gotoCaseStudy">
+									<a href="./trivago.html" class="formbutton">see case study 
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true">
+											<path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/>
+										</svg>
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
 
 					<div class="mainWorkBox workGetTech">
-						<a href="https://www.youtube.com/watch?v=c5LC3Z_tKQM" target="_blank" class="stretched-link"></a>
-						<div class="mainWorkThumbnail mainWorkVideo">
-							<div class="cvVideo">
-								<iframe width="100%" height="100%" src="https://www.youtube.com/embed/c5LC3Z_tKQM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-							</div>
-						</div>
-						<div class="mainWorkContent">
+						<div class="mainWorkTitle">
 							<div class="appTitle">
-								<div class="appIcon appIconGetTech"></div>
+								<div class="appIcon appIconGetTech" aria-hidden="true"></div>
 								<div class="appTitleDescription">
 									<h4>Get Tech Together Conference 2019</h4>
 									<h5>speaker</h5>
 								</div>
 							</div>
-							<div class="appTitleDescription">
-								<h2>how to bring more fun into our UI</h2>
-								<h5>9m 39s</h5>
+						</div>
+						<div class="mainWorkThumbnailContent">
+							<a href="https://www.youtube.com/watch?v=c5LC3Z_tKQM" target="_blank" rel="noopener noreferrer" class="stretched-link" aria-label="Watch Get Tech Together Conference talk on YouTube"></a>
+							<div class="mainWorkThumbnail mainWorkVideo">
+								<div class="cvVideo">
+									<iframe width="100%" height="100%" src="https://www.youtube.com/embed/c5LC3Z_tKQM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+								</div>
 							</div>
-							<div class="btn_gotoCaseStudy">
-								<a href="https://www.youtube.com/watch?v=c5LC3Z_tKQM" class="formbutton" target="_blank">watch on YouTube 
-									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" >
-										<path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/>
-									</svg>
-								</a>
+							<div class="mainWorkContent">
+								<div class="appTitleDescription">
+									<h2>how to bring more fun into our UI</h2>
+									<h5>9m 39s</h5>
+								</div>
+								<div class="btn_gotoCaseStudy">
+									<a href="https://www.youtube.com/watch?v=c5LC3Z_tKQM" class="formbutton" target="_blank" rel="noopener noreferrer">watch on YouTube 
+										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true">
+											<path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/>
+										</svg>
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -186,80 +228,23 @@
 			</div>
 		</section> 
 		
-		<!-- <section id="goto_story">
-			<div class="page_story">
-				<div class="content_container">
-					<h3>his values as a designer</h3>
-					<div class="indentAbit">
-					</div>
-					<p><h5>"I like exploring motions, you can tell a lot with just movements."</h5></p>
-					<div class="indentAbit"></div>
-					
-					<div class="row">
-						<div class="large-4 columns cvPara">
-							<p><h2>compelling and meaningful</h2>
-							<br>My goal is to always design things that gives meaning for people to use and build trust in an experience that makes sense.</p>
-						</div>
-						<div class="large-4 columns cvPara">
-							<p><h2>avoiding being attached to ideas</h2>
-							<br>We can easily miss the big problems and fall into traps when we don’t iterate. I believe in taking the time to explore possibilities.</p>
-						</div>
-						<div class="large-4 columns cvPara">
-							<p><h2>always looking to learn</h2>
-							<br>I value in taking criticism and giving constructive feedback. Hearing and looking at a different perspective is another fun part in design.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section> -->
-		
-		<!-- <section id="goto_cv">
-			<div class="content_container">
-				<div class="section_title"><h3>his achievements</h3></div>
-				<div class="container_cv">
-					<div class="cvVideoContainer">
-						<div class="cvVideo">
-							<iframe width="100%" height="100%" src="https://www.youtube.com/embed/c5LC3Z_tKQM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-						</div>
-					</div>
-					<div class="cvPara">
-						<div>
-							<h4>Get Tech Together Conference 2019</h4>
-							<h5>Speaker</h5>
-						</div>
-						<div>
-							<h4>Lumohacks Hackathon 2016</h4>
-							<h5>First Place Winner</h5>
-						</div>
-						<div>
-							<h4>SIAT Showcase Competition 2013</h4>
-							<h5>Top 3 in 'Programming and Systems Design'</h5>
-							<h5>Top 3 in 'Physical Prototype and Modeling'</h5>
-						</div>
-						<div>
-							<h4>SIAT Showcase Competition 2012</h4>
-							<h5>Top 3 in 'Moving Images'</h5>
-							<h5>Top 3 in 'Body and Environment'</h5>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section> -->
-		<canvas id="confetti-canvas"></canvas>
-		<script src="js/confetti.js"></script>
-
 		<section id="goto_contact">
 			<footer>
-					<h2>you made it to the end! <br>perhaps we can keep in touch?</h2>
-					<div class="button_row">
-						<a href="mailto:brucelui9@gmail.com" class="formbutton">shoot me an email</a>
-						<a href="https://www.linkedin.com/in/brucelui/" class="formbutton">LinkedIn</a>
-					</div>
+				<h2>you made it to the end! <br>perhaps we can keep in touch?</h2>
+				<div class="button_row">
+					<a href="mailto:brucelui9@gmail.com" class="formbutton">shoot me an email</a>
+					<a href="https://www.linkedin.com/in/brucelui/" class="formbutton" rel="noopener noreferrer">LinkedIn</a>
+				</div>
 				<br>Coded amateurly with coffee at hand.
-				<br>&copy; <script type="text/javascript">
+				<br>&copy; 
+				<script type="text/javascript">
 					document.write(new Date().getFullYear());
-				  </script> Bruce Lui
+				</script> 
+				Bruce Lui
 			</footer>
 		</section>
+		
+		<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js" defer></script>
+		<script src="js/confetti-scroll.js" defer></script>
 	</body>
 </html>
