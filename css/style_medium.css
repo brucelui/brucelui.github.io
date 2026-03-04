@@ -67,14 +67,20 @@ nav a{
 /* 3. Featured work & components */
 
 .mainWorkBox {
-	flex-direction: column-reverse;
-	justify-content: flex-end;
-	row-gap: 0px;
+	flex-direction: column;
+	justify-content: none;
+	row-gap: 16px;
 	height: 640px;
+}
+
+.mainWorkThumbnailContent {
+	flex-direction: column-reverse;
+	height: auto;
 }
 
 .mainWorkContent{
 	padding-bottom: 0px;
+	row-gap: 16px;
 }
 
 .mainWorkThumbnail {
@@ -98,6 +104,10 @@ nav a{
 .mainWorkBox:focus .mainWorkVideo
  {
 	transform: none;
+}
+
+.appStats {
+	display: none;
 }
 
 /* 4. Project pages & CV */
