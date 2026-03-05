@@ -497,22 +497,47 @@ nav a{
 .workN26 { background-image: url(../images/cover_n26.jpg); }
 .workGetTech{ background-image: url(../images/cover_gettech.jpg);}
 
-.mainWorkBox:hover .deviceEcosia,
-.mainWorkBox:focus .deviceEcosia {
-	content: url(../images/top_ecosia2.png);
-    transition: all .6s;
+/* Two-image stack for thumbnail crossfade on hover */
+.deviceImageStack {
+	position: relative;
+	display: inline-block;
 }
 
-.mainWorkBox:hover .deviceN26,
-.mainWorkBox:focus .deviceN26 {
-	content: url(../images/top_N26_2.png);
-    transition: all .6s;
+.deviceImageStack .deviceImgDefault {
+	display: block;
+	position: relative;
+	z-index: 1;
+	opacity: 1;
+	-webkit-transition: opacity 0.6s ease-out 0.4s;
+	-moz-transition: opacity 0.6s ease-out 0.4s;
+	-o-transition: opacity 0.6s ease-out 0.4s;
+	transition: opacity 0.6s ease-out 0.4s;
 }
 
-.mainWorkBox:hover .deviceTrivago,
-.mainWorkBox:focus .deviceTrivago {
-	content: url(../images/top_trivago2.png);
-    transition: all .6s;
+.deviceImageStack .deviceImgHover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	z-index: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.6s ease-out 0.4s;
+	-moz-transition: opacity 0.6s ease-out 0.4s;
+	-o-transition: opacity 0.6s ease-out 0.4s;
+	transition: opacity 0.6s ease-out 0.4s;
+}
+
+.mainWorkBox:hover .deviceImageStack .deviceImgDefault,
+.mainWorkBox:focus .deviceImageStack .deviceImgDefault {
+	opacity: 0;
+}
+
+.mainWorkBox:hover .deviceImageStack .deviceImgHover,
+.mainWorkBox:focus .deviceImageStack .deviceImgHover {
+	opacity: 1;
+	z-index: 1;
 }
 
 .workChild{
