@@ -59,9 +59,9 @@ interface ConfettiOptions {
 
 // Default configuration
 const DEFAULT_OPTIONS = {
-  animationDuration: 2000,
+  animationDuration: 800,
   colors: ['#a855f7', '#ec4899', '#fbbf24', '#3b82f6', '#10b981'],
-  particleCount: 3,
+  particleCount: 5,
   bottomThreshold: 50,
 };
 
