@@ -854,6 +854,20 @@ footer {
 	margin-right: auto;
 }
 
+.device3dContainer {
+	width: 100%;
+	height: 480px;
+	border-radius: var(--space-lg);
+	overflow: hidden;
+	cursor: grab;
+}
+.device3dContainer:active {
+	cursor: grabbing;
+}
+.device3dContainer canvas {
+	display: block;
+}
+
 .subWorkSection {
 	display: flex;
 	flex-direction: row;
