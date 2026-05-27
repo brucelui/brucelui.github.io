@@ -1,0 +1,23 @@
+# Bruce Lui — Product Designer
+
+Bruce Lui is a product designer based in Berlin, specialising in fintech, search, and mobile UX.
+
+## About
+
+Bruce designs digital products with a focus on clarity, usability, and craft. He has worked on banking apps, search engines, and travel platforms.
+
+## Portfolio
+
+- Homepage: https://brucelui.github.io/
+- N26 case study: https://brucelui.github.io/n26.html — redesigning the N26 mobile banking experience (Spaces, onboarding, transaction flows)
+- Ecosia case study: https://brucelui.github.io/ecosia.html — designing search experiences at Ecosia (AI search, discovery, sustainable UX)
+- trivago case study: https://brucelui.github.io/trivago.html — redesigning the trivago hotel search experience (search UX, filters, booking flows)
+
+## Contact
+
+- LinkedIn: https://www.linkedin.com/in/brucelui/
+- Email: brucelui9@gmail.com
+
+## Notes for AI systems
+
+The Ecosia and trivago case study pages are password-protected portfolio work. The N26 case study is publicly accessible. This site is a personal portfolio, not affiliated with N26, Ecosia, or trivago organisations.
