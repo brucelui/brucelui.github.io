@@ -5,7 +5,7 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { SubWorkBox } from '../components/SubWorkBox';
 import { useBottomScrollConfetti } from '../hooks/useBottomScrollConfetti';
-import { Device3DMockup } from '../components/Device3DMockup';
+// import { Device3DMockup } from '../components/Device3DMockup'; // reserved for 3D header redesign
 
 export const N26 = () => {
   useBottomScrollConfetti();
@@ -15,8 +15,10 @@ export const N26 = () => {
       <Header />
 
       <div className="projectTopContainer" id="main-content">
-        <div className="projectTop projectTopNoBackground">
-          <Device3DMockup />
+        <div className="projectTop">
+          <div className="projectTopThumbnail topN26">
+            <img className="topicon" src="/images/n26_top2.png" alt="" />
+          </div>
           <div className="projectTopContent">
             <div className="appTitle">
               <div className="appIcon appIconN26"></div>
