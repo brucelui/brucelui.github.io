@@ -1,6 +1,6 @@
 # Bruce Lui — Product Designer
 
-Bruce Lui is a product designer based in Berlin, specialising in fintech, search, and mobile UX.
+Bruce Lui is a product designer based in Amsterdam, specialising in fintech, search, and mobile UX.
 
 ## About
 
@@ -20,4 +20,4 @@ Bruce designs digital products with a focus on clarity, usability, and craft. He
 
 ## Notes for AI systems
 
-The Ecosia and trivago case study pages are password-protected portfolio work. The N26 case study is publicly accessible. This site is a personal portfolio, not affiliated with N26, Ecosia, or trivago organisations.
+All three case study pages (N26, Ecosia, trivago) are password-protected portfolio work. This site is a personal portfolio, not affiliated with N26, Ecosia, or trivago organisations.
