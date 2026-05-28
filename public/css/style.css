@@ -794,6 +794,8 @@ footer {
 	color: var(--color-secondary);
 	padding: var(--space-lg);
 	column-gap: var(--space-lg);
+	background-color: var(--color-primary);
+	border-radius: var(--space-lg);
 }
 
 .projectTopContentList a{
@@ -852,6 +854,10 @@ footer {
 	margin-top: var(--space-xxl);
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.projectTopNoBackground {
+	background-color: transparent;
 }
 
 .device3dContainer {

@@ -15,7 +15,7 @@ export const N26 = () => {
       <Header />
 
       <div className="projectTopContainer" id="main-content">
-        <div className="projectTop">
+        <div className="projectTop projectTopNoBackground">
           <Device3DMockup />
           <div className="projectTopContent">
             <div className="appTitle">

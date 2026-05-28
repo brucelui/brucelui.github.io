@@ -25,37 +25,41 @@ export const Device3DMockup = () => {
     // ─── Scene & Camera ────────────────────────────────────────────────────────
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(42, w / h, 0.1, 200);
-    camera.position.set(4.2, 5.5, 5.5);
+    camera.position.set(4.2, 9.0, 5.5);
     camera.lookAt(0, 0, 0);
 
     // ─── Lights ────────────────────────────────────────────────────────────────
-    scene.add(new THREE.AmbientLight(0xffffff, 0.45));
+    scene.add(new THREE.AmbientLight(0xffffff, 0.2));
 
-    const keyLight = new THREE.DirectionalLight(0xffffff, 1.1);
-    keyLight.position.set(-6, 10, 4);
+    const keyLight = new THREE.DirectionalLight(0xffffff, 1.8);
+    keyLight.position.set(8, 4, -6);
     keyLight.castShadow = true;
     keyLight.shadow.mapSize.set(4096, 4096);
     keyLight.shadow.camera.near   = 1;
-    keyLight.shadow.camera.far    = 25;
-    keyLight.shadow.camera.left   = -5;
-    keyLight.shadow.camera.right  = 5;
-    keyLight.shadow.camera.top    = 5;
-    keyLight.shadow.camera.bottom = -5;
+    keyLight.shadow.camera.far    = 40;
+    keyLight.shadow.camera.left   = -12;
+    keyLight.shadow.camera.right  = 12;
+    keyLight.shadow.camera.top    = 12;
+    keyLight.shadow.camera.bottom = -12;
     keyLight.shadow.radius = 1.5;
     keyLight.shadow.bias   = -0.0003;
     scene.add(keyLight);
 
-    const rimLight = new THREE.DirectionalLight(0xffffff, 0.25);
+    const rimLight = new THREE.DirectionalLight(0xe0f0ff, 0.6);
     rimLight.position.set(6, 2, -6);
     scene.add(rimLight);
+
+    const fillLight = new THREE.DirectionalLight(0xffffff, 0.7);
+    fillLight.position.set(0, 10, 3);
+    scene.add(fillLight);
 
     // ─── Ground shadow plane ───────────────────────────────────────────────────
     const ground = new THREE.Mesh(
       new THREE.PlaneGeometry(30, 30),
-      new THREE.ShadowMaterial({ opacity: 0.35 })
+      new THREE.ShadowMaterial({ opacity: 0.55 })
     );
     ground.rotation.x = -Math.PI / 2;
-    ground.position.y = -0.22;
+    ground.position.y = 1.62;
     ground.receiveShadow = true;
     scene.add(ground);
 
@@ -86,13 +90,14 @@ export const Device3DMockup = () => {
     void Z_SCREEN; // used only as reference comment in original
 
     // ─── Materials ─────────────────────────────────────────────────────────────
-    const matteMat = new THREE.MeshStandardMaterial({ color: 0xfafafa, roughness: 0.88, metalness: 0.0 });
+    const matteMat = new THREE.MeshStandardMaterial({ color: 0xfafafa, roughness: 0.6, metalness: 0.0 });
     const btnMat   = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: 0.90, metalness: 0.0 });
 
     // ─── Device group ──────────────────────────────────────────────────────────
     const group = new THREE.Group();
     group.rotation.x = -Math.PI / 2;
     group.rotation.z =  Math.PI / 2.8;
+    group.scale.setScalar(1.65);
     scene.add(group);
 
     // Body
@@ -127,12 +132,27 @@ export const Device3DMockup = () => {
     group.add(frontCap);
 
     // Screen
+    const screenTexture = new THREE.TextureLoader().load('/images/n26_screen.jpg');
+    screenTexture.colorSpace = THREE.SRGBColorSpace;
+    const screenGeo = new THREE.ShapeGeometry(roundedRect(W - 0.14, H - 0.14, CR - 0.07), 48);
+    // ShapeGeometry uses raw x/y positions as UVs; remap to [0, 1]
+    const sw = W - 0.14;
+    const sh = H - 0.14;
+    const uvAttr = screenGeo.attributes.uv as THREE.BufferAttribute;
+    const posAttr = screenGeo.attributes.position as THREE.BufferAttribute;
+    for (let i = 0; i < posAttr.count; i++) {
+      uvAttr.setXY(
+        i,
+        (posAttr.getX(i) + sw / 2) / sw,
+        (posAttr.getY(i) + sh / 2) / sh,
+      );
+    }
+    uvAttr.needsUpdate = true;
     const screenMesh = new THREE.Mesh(
-      new THREE.ShapeGeometry(roundedRect(W - 0.14, H - 0.14, CR - 0.07), 48),
-      new THREE.MeshStandardMaterial({
-        color: 0x333333,
-        roughness: 0.92,
-        metalness: 0.0,
+      screenGeo,
+      new THREE.MeshBasicMaterial({
+        map: screenTexture,
+        color: 0xe8e8e8,
         polygonOffset: true,
         polygonOffsetFactor: -1,
         polygonOffsetUnits: -1,
@@ -173,6 +193,34 @@ export const Device3DMockup = () => {
       group.add(lens);
     });
 
+    // ─── Scale figures ─────────────────────────────────────────────────────────
+    function addFigure(path: string, x: number, z: number, height: number, rotY = 0) {
+      const geo = new THREE.PlaneGeometry(height, height);
+      const tex = new THREE.TextureLoader().load(path, (t) => {
+        mesh.scale.x = t.image.width / t.image.height;
+      });
+      tex.colorSpace = THREE.SRGBColorSpace;
+      const mat = new THREE.MeshStandardMaterial({
+        map: tex, transparent: true, alphaTest: 0.5, side: THREE.DoubleSide,
+      });
+      const depthMat = new THREE.MeshDepthMaterial({
+        depthPacking: THREE.RGBADepthPacking, map: tex, alphaTest: 0.5,
+      });
+      const mesh = new THREE.Mesh(geo, mat);
+      mesh.customDepthMaterial = depthMat;
+      mesh.castShadow = true;
+      mesh.receiveShadow = true;
+      mesh.position.set(x, 1.62 + height / 2, z);
+      mesh.rotation.y = rotY;
+      scene.add(mesh);
+      return mesh;
+    }
+
+    const F1_BASE_X = 1.5, F1_BASE_Z = -1.0, F1_H = 1.0;
+    const figure1 = addFigure('/images/figure1.png', F1_BASE_X, F1_BASE_Z, F1_H, Math.PI * 0.1);
+    addFigure('/images/figure2.png', -2.4,  0.8, 0.9,  Math.PI * 0.6);
+    addFigure('/images/figure3.png', -1.5,  1.8, 1.1, -Math.PI * 0.2);
+
     // ─── Mouse tracking ────────────────────────────────────────────────────────
     let mx = 0, my = 0, tx = 0, ty = 0;
     const handleMouseMove = (e: MouseEvent) => {
@@ -203,7 +251,10 @@ export const Device3DMockup = () => {
       ty += (my - ty) * 0.05;
       group.rotation.x = BASE_RX + ty * 0.12;
       group.rotation.z = BASE_RZ + tx * 0.12;
-      group.position.y = Math.sin(Date.now() * 0.0008) * 0.06;
+      group.position.y = 1.55;
+      keyLight.position.set(8 - tx * 3, 4, -6 + ty * 3);
+      figure1.position.x = F1_BASE_X + tx * 0.4;
+      figure1.position.z = F1_BASE_Z + ty * 0.4;
       renderer.render(scene, camera);
     };
     animate();
