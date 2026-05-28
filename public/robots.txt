@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /password.html
+
+Sitemap: https://brucelui.github.io/sitemap.xml

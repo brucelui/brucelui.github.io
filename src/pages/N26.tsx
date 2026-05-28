@@ -5,6 +5,7 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { SubWorkBox } from '../components/SubWorkBox';
 import { useBottomScrollConfetti } from '../hooks/useBottomScrollConfetti';
+// import { Device3DMockup } from '../components/Device3DMockup'; // reserved for 3D header redesign
 
 export const N26 = () => {
   useBottomScrollConfetti();
