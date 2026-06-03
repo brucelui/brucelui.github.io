@@ -5,15 +5,30 @@ import { Footer } from '../components/Footer';
 import { WorkItem, StarRating } from '../components/WorkItem';
 import type { StatRow } from '../components/WorkItem';
 import { useBottomScrollConfetti } from '../hooks/useBottomScrollConfetti';
+import { trackEvent } from '../hooks/useAnalytics';
 
 const caseStudyStats = (mau: string, reviewCount: string, reviewHref: string, awardText: string, awardHref: string): StatRow[] => [
   { value: mau, label: 'Monthly Active Users' },
   {
     value: <StarRating />,
-    label: <a href={reviewHref} target="_blank" rel="noopener noreferrer">{reviewCount} reviews↗</a>,
+    label: (
+      <a
+        href={reviewHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() => trackEvent('external_link_click', { url: reviewHref, label: 'app_store_reviews' })}
+      >{reviewCount} reviews↗</a>
+    ),
   },
   {
-    label: <a href={awardHref} target="_blank" rel="noopener noreferrer">{awardText}↗</a>,
+    label: (
+      <a
+        href={awardHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() => trackEvent('external_link_click', { url: awardHref, label: awardText })}
+      >{awardText}↗</a>
+    ),
   },
 ];
 
@@ -67,6 +82,7 @@ export const Home = () => {
               heading="making it easier to fight climate change"
               buttonText="see case study"
               buttonHref="./ecosia.html"
+              onCTAClick={() => trackEvent('case_study_click', { case_study: 'ecosia' })}
             />
 
             <WorkItem
@@ -91,6 +107,7 @@ export const Home = () => {
               heading="engaging ways on how to save money"
               buttonText="see case study"
               buttonHref="./n26.html"
+              onCTAClick={() => trackEvent('case_study_click', { case_study: 'n26' })}
             />
 
             <WorkItem
@@ -115,6 +132,7 @@ export const Home = () => {
               heading="helping travelers find their ideal hotel"
               buttonText="see case study"
               buttonHref="./trivago.html"
+              onCTAClick={() => trackEvent('case_study_click', { case_study: 'trivago' })}
             />
 
             <WorkItem
@@ -131,6 +149,7 @@ export const Home = () => {
               buttonText="watch on YouTube"
               buttonHref="https://www.youtube.com/watch?v=c5LC3Z_tKQM"
               buttonExternal
+              onCTAClick={() => trackEvent('external_link_click', { url: 'https://www.youtube.com/watch?v=c5LC3Z_tKQM', label: 'get_tech_video' })}
             />
           </div>
         </div>

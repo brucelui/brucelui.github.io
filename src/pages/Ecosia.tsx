@@ -23,7 +23,7 @@ export const Ecosia = () => {
               <div className="appIcon appIconEcosia"></div>
               <div className="appTitleDescription">
                 <h4>Ecosia</h4>
-                <h5>fintech, digital banking</h5>
+                <h5>green tech, search engine, ai chat</h5>
               </div>
             </div>
             <div className="projectTopContentList">
@@ -249,7 +249,7 @@ export const Ecosia = () => {
               workClass="workN26"
               appIconClass="appIconN26"
               title="N26"
-              subtitle="fintech, digital banking"
+              subtitle="green tech, search engine, ai chat"
               heading="engaging ways on how to save money"
               thumbnailSrc="/images/n26_top2.png"
             />

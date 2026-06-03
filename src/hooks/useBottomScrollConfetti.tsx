@@ -48,6 +48,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import confetti from "canvas-confetti";
+import { trackEvent } from "./useAnalytics";
 
 // Configuration types
 interface ConfettiOptions {
@@ -138,6 +139,7 @@ export const useBottomScrollConfetti = (customOptions?: ConfettiOptions) => {
         confettiTriggeredRef.current = true;
         setHasReachedBottom(true);
         triggerBottomConfetti(options);
+        trackEvent('confetti_triggered', { page: window.location.pathname });
         
         // Reset after animation completes + buffer
         setTimeout(() => {

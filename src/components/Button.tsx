@@ -12,10 +12,11 @@ interface ButtonProps {
   withArrow?: boolean;
   target?: string;
   rel?: string;
+  onClick?: () => void;
 }
 
-export const Button = ({ href, children, withArrow = false, target, rel }: ButtonProps) => (
-  <a href={href} className="formbutton" target={target} rel={rel}>
+export const Button = ({ href, children, withArrow = false, target, rel, onClick }: ButtonProps) => (
+  <a href={href} className="formbutton" target={target} rel={rel} onClick={onClick}>
     {children}
     {withArrow && <ArrowIcon />}
   </a>

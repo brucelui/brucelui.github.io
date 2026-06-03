@@ -16,6 +16,7 @@ interface WorkItemBaseProps {
   buttonHref: string;
   buttonExternal?: boolean;
   stats?: StatRow[];
+  onCTAClick?: () => void;
 }
 
 interface ImageWorkItemProps extends WorkItemBaseProps {
@@ -47,12 +48,12 @@ const StarRating = () => (
 export { StarRating };
 
 export const WorkItem = (props: WorkItemProps) => {
-  const { workClass, appIconClass, title, subtitle, heading, buttonText, buttonHref, buttonExternal, stats } = props;
+  const { workClass, appIconClass, title, subtitle, heading, buttonText, buttonHref, buttonExternal, stats, onCTAClick } = props;
 
   return (
     <div className={`mainWorkBox ${workClass}`}>
       {props.variant === 'image' && (
-        <a href={props.href} className="stretchedLink" aria-label={props.ariaLabel}></a>
+        <a href={props.href} className="stretchedLink" aria-label={props.ariaLabel} onClick={onCTAClick}></a>
       )}
       <div className="mainWorkTitle">
         <div className="appTitle">
@@ -83,6 +84,7 @@ export const WorkItem = (props: WorkItemProps) => {
             rel="noopener noreferrer"
             className="stretchedLink"
             aria-label={props.ariaLabel}
+            onClick={onCTAClick}
           ></a>
         )}
         <div className={`mainWorkThumbnail${props.variant === 'video' ? ' mainWorkVideo' : ''}`}>
@@ -132,6 +134,7 @@ export const WorkItem = (props: WorkItemProps) => {
               withArrow
               target={buttonExternal ? '_blank' : undefined}
               rel={buttonExternal ? 'noopener noreferrer' : undefined}
+              onClick={onCTAClick}
             >
               {buttonText}
             </Button>
