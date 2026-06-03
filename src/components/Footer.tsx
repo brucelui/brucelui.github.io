@@ -1,4 +1,5 @@
 import { Button } from './Button';
+import { trackEvent } from '../hooks/useAnalytics';
 
 export const Footer = () => (
   <section id="goto_contact">
@@ -8,10 +9,19 @@ export const Footer = () => (
         perhaps we can keep in touch?
       </h2>
       <div className="buttonRow">
-        <Button href="mailto:brucelui9@gmail.com" target="_blank">
+        <Button
+          href="mailto:brucelui9@gmail.com"
+          target="_blank"
+          onClick={() => trackEvent('contact_click', { method: 'email' })}
+        >
           shoot me an email
         </Button>
-        <Button href="https://www.linkedin.com/in/brucelui/" target="_blank" rel="noopener noreferrer">
+        <Button
+          href="https://www.linkedin.com/in/brucelui/"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => trackEvent('contact_click', { method: 'linkedin' })}
+        >
           LinkedIn
         </Button>
       </div>

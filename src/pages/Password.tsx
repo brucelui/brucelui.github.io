@@ -1,6 +1,7 @@
 import { StrictMode, useState, useRef, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Header } from '../components/Header';
+import { trackEvent } from '../hooks/useAnalytics';
 
 const SESSION_KEY = 'case_study_authenticated';
 const PASSWORD_HASH = '57168661084555e5d27d75eec6ebd279154bd912d27f2aab81b8a84bdf163ac5';
@@ -43,9 +44,11 @@ export const Password = () => {
     try {
       const hash = await hashPassword(password);
       if (hash === PASSWORD_HASH) {
+        trackEvent('password_unlock_success', { destination: getReturnUrl() });
         sessionStorage.setItem(SESSION_KEY, 'true');
         window.location.href = getReturnUrl();
       } else {
+        trackEvent('password_unlock_fail');
         setError('Incorrect password. Please try again.');
         if (inputRef.current) inputRef.current.value = '';
         inputRef.current?.focus();
