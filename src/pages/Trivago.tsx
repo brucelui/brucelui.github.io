@@ -173,14 +173,17 @@ export const Trivago = () => {
               <h4>Examples of the "How Might We" we pursued:</h4>
               <div className="projectCardRow">
                 <div className="projectCard">
+                  <span className="projectCardNumber" aria-hidden="true">1</span>
                   <h5>HMW...</h5>
                   <p>...give users more confidence to explore their hotel options?</p>
                 </div>
                 <div className="projectCard">
+                  <span className="projectCardNumber" aria-hidden="true">2</span>
                   <h5>HMW...</h5>
                   <p>...enable users to compare their hotel options more easily?</p>
                 </div>
                 <div className="projectCard">
+                  <span className="projectCardNumber" aria-hidden="true">3</span>
                   <h5>HMW...</h5>
                   <p>...give more clarity on hotel pricing and information?</p>
                 </div>

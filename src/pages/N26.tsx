@@ -171,14 +171,17 @@ export const N26 = () => {
               <h4>Examples of the "How Might We" we pursued:</h4>
               <div className="projectCardRow">
                 <div className="projectCard">
+                  <span className="projectCardNumber" aria-hidden="true">1</span>
                   <h5>HMW...</h5>
                   <p>...surface features early in the user journey?</p>
                 </div>
                 <div className="projectCard">
+                  <span className="projectCardNumber" aria-hidden="true">2</span>
                   <h5>HMW...</h5>
                   <p>...help users understand how else they can use Spaces?</p>
                 </div>
                 <div className="projectCard">
+                  <span className="projectCardNumber" aria-hidden="true">3</span>
                   <h5>HMW...</h5>
                   <p>...increase awareness of other feature offerings from Spaces?</p>
                 </div>

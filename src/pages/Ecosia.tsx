@@ -172,18 +172,22 @@ export const Ecosia = () => {
               <h4>Examples of the "How Might We" we pursued:</h4>
               <div className="projectCardRow">
                 <div className="projectCard">
+                  <span className="projectCardNumber" aria-hidden="true">1</span>
                   <h5>HMW...</h5>
                   <p>...better transition users from what they are used to from using Google to Ecosia?</p>
                 </div>
                 <div className="projectCard">
+                  <span className="projectCardNumber" aria-hidden="true">2</span>
                   <h5>HMW...</h5>
                   <p>...surface green alternatives without green-washing the users?</p>
                 </div>
                 <div className="projectCard">
+                  <span className="projectCardNumber" aria-hidden="true">3</span>
                   <h5>HMW...</h5>
                   <p>...make our search experience unique to for USP?</p>
                 </div>
                 <div className="projectCard">
+                  <span className="projectCardNumber" aria-hidden="true">4</span>
                   <h5>HMW...</h5>
                   <p>...improve the quality perception of our answers?</p>
                 </div>

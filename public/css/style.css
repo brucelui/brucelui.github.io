@@ -948,17 +948,32 @@ footer {
 }
 
 .projectCard {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	row-gap: var(--space-sm);
 	width: 100%;
-	background-color: var(--color-primary);
-	background-image: url('../images/bg_grain.png');
-	background-repeat: repeat;
-	background-size: auto;
 	padding: var(--space-sm);
 	border-radius: var(--space-sm);
-	color: var(--color-secondary);
+	background-color: rgba(255, 255, 255, 0.3);
+	border: 2px solid rgba(255, 255, 255, 0.3);
+	overflow: hidden;
+	min-height: 120px;
+	color: var(--color-primary);
+}
+
+.projectCardNumber {
+	position: absolute;
+	top: 50%;
+	right: 4px;
+	transform: translateY(-50%);
+	font-size: 120px;
+	font-weight: 700;
+	line-height: 1;
+	color: var(--color-primary);
+	opacity: 0.08;
+	pointer-events: none;
+	user-select: none;
 }
 
 .topTrivago { background-image: url(../images/cover_trivago.jpg); background-position: center center;}
