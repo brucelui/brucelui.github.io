@@ -26,7 +26,7 @@ export const Footer = () => (
         </Button>
       </div>
       <br />
-      Designed with intent. Vibe coded via Cursor. Fueled by coffee.
+      Designed with intent. Vibe coded via Claude. Fueled by coffee.
       <br />&copy; {new Date().getFullYear()} Bruce Lui
     </footer>
   </section>

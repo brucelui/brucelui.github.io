@@ -5,9 +5,13 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { SubWorkBox } from '../components/SubWorkBox';
 import { useBottomScrollConfetti } from '../hooks/useBottomScrollConfetti';
+import { useScrollFadeIn } from '../hooks/useScrollFadeIn';
+import { DescriptionIcon } from '../components/DescriptionIcon';
+import { ProjectAccordion } from '../components/ProjectAccordion';
 
 export const Trivago = () => {
   useBottomScrollConfetti();
+  useScrollFadeIn();
 
   return (
     <>
@@ -68,7 +72,10 @@ export const Trivago = () => {
             <div className="projectSectionRight">
               <div className="projectSectionGroups">
                 <div className="projectDescription">
-                  <h4>What did I do?</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-01.svg" />
+                    <h4>What did I do?</h4>
+                  </div>
                   <ul>
                     <li>Had 1 month to redesigned and build the entire mobile app from scratch!</li>
                     <li>Iterated and optimized heavily on the results page.</li>
@@ -76,14 +83,24 @@ export const Trivago = () => {
                   </ul>
                 </div>
                 <div className="projectDescription">
-                  <h4>Who is trivago?</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-02.svg" />
+                    <h4>My impacts</h4>
+                  </div>
                   <ul>
-                    <li>trivago is a travel tech company based in Düsseldorf, Germany.</li>
-                    <li>They are known for their search engine for hotels and other types of accommodations.</li>
-                    <li>At the time there were around 1200+ employees with around 25+ designers.</li>
+                    <li>The redesigned app received a Google Playstore Editor's Choice and won <a href="https://premio.canaltech.com.br/2017/?utm_source=canaltech&utm_medium=premio-2018&utm_campaign=botao-edicao-2017" target="_blank" rel="noopener noreferrer">Best Travel App of the Year</a> from popular Brazilian tech blog Canaltech.</li>
+                    <li><b>Significant increase in impressions</b> on detail pages which showed users are exploring more hotel options and finding more relevant information to aid their decision process.</li>
+                    <li>The series of optimizations resulted in an <b>increase in CTR and better performance</b> than the mobile website counterpart.</li>
                   </ul>
                 </div>
               </div>
+              <ProjectAccordion title="Never heard of trivago?" appIconClass="appIconTrivago">
+                <ul>
+                  <li>trivago is a travel tech company based in Düsseldorf, Germany.</li>
+                  <li>They are known for their search engine for hotels and other types of accommodations.</li>
+                  <li>At the time there were around 1200+ employees with around 25+ designers.</li>
+                </ul>
+              </ProjectAccordion>
             </div>
           </div>
 
@@ -95,7 +112,10 @@ export const Trivago = () => {
             <div className="projectSectionRight">
               <div className="projectSectionGroups">
                 <div className="projectDescription">
-                  <h4>What does the app do?</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-03.svg" />
+                    <h4>What does the app do?</h4>
+                  </div>
                   <ul>
                     <li>Helps users explore and compare hotel options from multiple OTA websites (ex. Booking.com, Expedia, etc)</li>
                     <li>Enables users to find the best deals that suit their needs.</li>
@@ -103,7 +123,10 @@ export const Trivago = () => {
                   </ul>
                 </div>
                 <div className="projectDescription">
-                  <h4>User Problems Identified</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-04.svg" />
+                    <h4>User Problems Identified</h4>
+                  </div>
                   <ul>
                     <li>Power users like to explore their options before going straight to booking; and did not feel satisfied to do so with the old designs.</li>
                     <li>Some information displayed was confusing. (ex. hotel stars mistaken as rating stars)</li>
@@ -125,7 +148,10 @@ export const Trivago = () => {
             <div className="projectSectionRight">
               <div className="projectSectionGroups">
                 <div className="projectDescription">
-                  <h4>Top Product Goals</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-05.svg" />
+                    <h4>Top Product Goals</h4>
+                  </div>
                   <ul>
                     <li>Empower users to discover and explore more hotel options.</li>
                     <li>Create a simple, innovative, and emotionally-engaging mobile experience.</li>
@@ -133,7 +159,10 @@ export const Trivago = () => {
                   </ul>
                 </div>
                 <div className="projectDescription">
-                  <h4>Key Metrics</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-06.svg" />
+                    <h4>Key Metrics</h4>
+                  </div>
                   <ul>
                     <li>Click-through rate</li>
                     <li>Search rate</li>
@@ -167,7 +196,10 @@ export const Trivago = () => {
             <div className="projectSectionRight">
               <div className="projectSectionGroups">
                 <div className="projectDescription">
-                  <h4>Team</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-07.svg" />
+                    <h4>Team</h4>
+                  </div>
                   <ul>
                     <li>4 Product Designers</li>
                     <li>3 Product Managers</li>
@@ -176,7 +208,10 @@ export const Trivago = () => {
                   </ul>
                 </div>
                 <div className="projectDescription">
-                  <h4>Methods</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-08.svg" />
+                    <h4>Methods</h4>
+                  </div>
                   <ul>
                     <li>Qualitative: User tests, reviews, feedbacks, NPS</li>
                     <li>Quantitative: A/B tests,</li>
@@ -199,15 +234,10 @@ export const Trivago = () => {
             <div className="projectSectionRight">
               <div className="projectSectionGroups">
                 <div className="projectDescription">
-                  <h4>My impacts</h4>
-                  <ul>
-                    <li>The redesigned app received a Google Playstore Editor's Choice and won <a href="https://premio.canaltech.com.br/2017/?utm_source=canaltech&utm_medium=premio-2018&utm_campaign=botao-edicao-2017" target="_blank" rel="noopener noreferrer">Best Travel App of the Year</a> from popular Brazilian tech blog Canaltech.</li>
-                    <li><b>Significant increase in impressions</b> on detail pages which showed users are exploring more hotel options and finding more relevant information to aid their decision process.</li>
-                    <li>The series of optimizations resulted in an <b>increase in CTR and better performance</b> than the mobile website counterpart.</li>
-                  </ul>
-                </div>
-                <div className="projectDescription">
-                  <h4>My learnings</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-09.svg" />
+                    <h4>My learnings</h4>
+                  </div>
                   <ul>
                     <li>Being able to let go of your creations; some of my personal favourite designs did not make a significant improvement to the metrics when we A/B tested them.</li>
                     <li>Set clearer benchmarks and expectations when launching redesigns. As we had such a tight deadline to pull everything off, there was little consideration on the definition of success.</li>

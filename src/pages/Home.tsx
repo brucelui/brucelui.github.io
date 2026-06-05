@@ -5,6 +5,7 @@ import { Footer } from '../components/Footer';
 import { WorkItem, StarRating } from '../components/WorkItem';
 import type { StatRow } from '../components/WorkItem';
 import { useBottomScrollConfetti } from '../hooks/useBottomScrollConfetti';
+import { useScrollFadeIn } from '../hooks/useScrollFadeIn';
 import { trackEvent } from '../hooks/useAnalytics';
 
 const caseStudyStats = (mau: string, reviewCount: string, reviewHref: string, awardText: string, awardHref: string): StatRow[] => [
@@ -34,6 +35,7 @@ const caseStudyStats = (mau: string, reviewCount: string, reviewHref: string, aw
 
 export const Home = () => {
   useBottomScrollConfetti();
+  useScrollFadeIn('.mainWorkBox');
 
   return (
     <>

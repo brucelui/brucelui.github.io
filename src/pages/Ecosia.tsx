@@ -5,9 +5,13 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { SubWorkBox } from '../components/SubWorkBox';
 import { useBottomScrollConfetti } from '../hooks/useBottomScrollConfetti';
+import { useScrollFadeIn } from '../hooks/useScrollFadeIn';
+import { DescriptionIcon } from '../components/DescriptionIcon';
+import { ProjectAccordion } from '../components/ProjectAccordion';
 
 export const Ecosia = () => {
   useBottomScrollConfetti();
+  useScrollFadeIn();
 
   return (
     <>
@@ -64,7 +68,10 @@ export const Ecosia = () => {
             <div className="projectSectionRight">
               <div className="projectSectionGroups">
                 <div className="projectDescription">
-                  <h4>What did I do?</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-01.svg" />
+                    <h4>What did I do?</h4>
+                  </div>
                   <ul>
                     <li>Led cross functional teams to not only redesign and implement the rebrand update, but also directed brand strategy within the product.</li>
                     <li>Responsible for the core search experience and managing the strategy pivot from traditional search to <b>AI-driven search</b>.</li>
@@ -72,14 +79,25 @@ export const Ecosia = () => {
                   </ul>
                 </div>
                 <div className="projectDescription">
-                  <h4>Who is Ecosia?</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-02.svg" />
+                    <h4>My impact</h4>
+                  </div>
                   <ul>
-                    <li>B-Corp organization that ambitiously focuses on solving the climate crisis by using profits for tree planting projects and other climate action initiatives. Ecosia shares transparently their monthly reports detailing how much they spend for their cause.</li>
-                    <li>Planted over 200,000,000 trees, with <b>20M+ active monthly users</b>.</li>
-                    <li>At the time there were around 100+ employees with 9 designers.</li>
+                    <li>Spearheaded several strategic core rebrand updates to the search experience, while leading cross-functional teams consisting of designers and engineers.</li>
+                    <li>Optimizations to the ads delivered a 15.8% revenue increase and 25% ad CTR improvement.</li>
+                    <li>Layout optimizations delivered an increase in 1.2% retention and 18% ad CTR.</li>
+                    <li>Leveraged the AI search launch to maintain retention while driving a measurable uplift in AI-related feature adoption and positive feedback.</li>
                   </ul>
                 </div>
               </div>
+              <ProjectAccordion title="Never heard of Ecosia?" appIconClass="appIconEcosia">
+                <ul>
+                  <li>B-Corp organization that ambitiously focuses on solving the climate crisis by using profits for tree planting projects and other climate action initiatives. Ecosia shares transparently their monthly reports detailing how much they spend for their cause.</li>
+                  <li>Planted over 200,000,000 trees, with <b>20M+ active monthly users</b>.</li>
+                  <li>At the time there were around 100+ employees with 9 designers.</li>
+                </ul>
+              </ProjectAccordion>
             </div>
           </div>
 
@@ -91,7 +109,10 @@ export const Ecosia = () => {
             <div className="projectSectionRight">
               <div className="projectSectionGroups">
                 <div className="projectDescription">
-                  <h4>What is the product?</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-03.svg" />
+                    <h4>What is the product?</h4>
+                  </div>
                   <ul>
                     <li>It's a search engine just like Google or Bing where users can search whatever they desire to get answers via web results, images, videos, news, and now AI generated answers.</li>
                     <li>We also have features that promote more sustainable alternatives like taking trains over flights, or showcasing which and how much certain companies have made a positive climate impact.</li>
@@ -99,7 +120,10 @@ export const Ecosia = () => {
                   </ul>
                 </div>
                 <div className="projectDescription">
-                  <h4>User Problems Identified</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-04.svg" />
+                    <h4>User Problems Identified</h4>
+                  </div>
                   <ul>
                     <li><b>Low Trust in Search Quality:</b> Users found the results hard to read and perceived them as lower quality than competitors, even when the data was the same. Some rich content features were also reported to be missing or inaccurate.</li>
                     <li><b>Ad Frustration &amp; Confusion:</b> High ad density annoyed users, yet many didn't understand how the platform made money or how to manage their ad settings.</li>
@@ -120,7 +144,10 @@ export const Ecosia = () => {
             <div className="projectSectionRight">
               <div className="projectSectionGroups">
                 <div className="projectDescription">
-                  <h4>Top Product Goals</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-05.svg" />
+                    <h4>Top Product Goals</h4>
+                  </div>
                   <ul>
                     <li><b>Elevate the AI Experience:</b> Surpass traditional search quality by closing key feature gaps and delivering a smarter, faster way for users to find answers.</li>
                     <li><b>Profitable Innovation:</b> Strategically monetize AI search and optimize ad placement to ensure the search platform remains financially sustainable.</li>
@@ -128,7 +155,10 @@ export const Ecosia = () => {
                   </ul>
                 </div>
                 <div className="projectDescription">
-                  <h4>Key Metrics</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-06.svg" />
+                    <h4>Key Metrics</h4>
+                  </div>
                   <ul>
                     <li>Click-Through Rate</li>
                     <li>Retention Rate</li>
@@ -167,7 +197,10 @@ export const Ecosia = () => {
             <div className="projectSectionRight">
               <div className="projectSectionGroups">
                 <div className="projectDescription">
-                  <h4>Team</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-07.svg" />
+                    <h4>Team</h4>
+                  </div>
                   <ul>
                     <li>3 Product Designers</li>
                     <li>1 Product Manager</li>
@@ -176,7 +209,10 @@ export const Ecosia = () => {
                   </ul>
                 </div>
                 <div className="projectDescription">
-                  <h4>Methods</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-08.svg" />
+                    <h4>Methods</h4>
+                  </div>
                   <ul>
                     <li><b>Qualitative Insights:</b> User tests, surveys, feedbacks</li>
                     <li><b>Quantitative Insights:</b> A/B tests</li>
@@ -204,16 +240,10 @@ export const Ecosia = () => {
             <div className="projectSectionRight">
               <div className="projectSectionGroups">
                 <div className="projectDescription">
-                  <h4>My impact</h4>
-                  <ul>
-                    <li>Spearheaded several strategic core rebrand updates to the search experience, while leading cross-functional teams consisting of designers and engineers.</li>
-                    <li>Optimizations to the ads delivered a 15.8% revenue increase and 25% ad CTR improvement.</li>
-                    <li>Layout optimizations delivered an increase in 1.2% retention and 18% ad CTR.</li>
-                    <li>Leveraged the AI search launch to maintain retention while driving a measurable uplift in AI-related feature adoption and positive feedback.</li>
-                  </ul>
-                </div>
-                <div className="projectDescription">
-                  <h4>My learnings</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-09.svg" />
+                    <h4>My learnings</h4>
+                  </div>
                   <ul>
                     <li><b>Data-Driven Influence:</b> I learned that pairing design intuition with hard data—and using AI to quickly synthesize that data—is the most effective way to align stakeholders and justify design priorities.</li>
                     <li><b>Cross-Functional Fluency:</b> To ensure project success, I integrated myself into engineering rituals and adapted my presentation style to speak the specific "languages" of developers, PMs, and fellow designers.</li>

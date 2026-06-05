@@ -35,6 +35,15 @@
 	--text-md: 24px;
 	--text-lg: 36px;
 	--text-xl: 64px;
+
+	--ease-standard: cubic-bezier(0.25, 0.8, 0.25, 1);
+	--duration-standard: 400ms;
+	--duration-long: 1200ms;
+}
+
+@keyframes fadeInUp {
+	from { opacity: 0; transform: translateY(24px); }
+	to   { opacity: 1; transform: translateY(0); }
 }
 
 body {
@@ -526,6 +535,13 @@ nav a{
 	position: relative;
 }
 
+.appIconSm {
+	width: 32px;
+	height: 32px;
+	min-width: 32px;
+	border-radius: var(--space-xs);
+}
+
 .appTitle {
 	display: flex;
 	flex-direction: row;
@@ -862,6 +878,65 @@ footer {
 	background-color: transparent;
 }
 
+.projectAccordion {
+	margin-top: var(--space-md);
+	border: 2px solid var(--color-primary);
+	border-radius: var(--space-sm);
+	padding: var(--space-sm) var(--space-md);
+}
+
+.projectAccordionToggle {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	gap: var(--space-sm);
+	justify-content: space-between;
+	user-select: none;
+	width: 100%;
+	background: none;
+	border: none;
+	padding: 0;
+	text-align: left;
+}
+
+.projectAccordionToggle h4 {
+	margin: 0;
+	flex: 1;
+}
+
+.projectAccordionChevron {
+	width: 10px;
+	height: 10px;
+	border-right: 2px solid var(--color-primary);
+	border-bottom: 2px solid var(--color-primary);
+	transform: rotate(45deg);
+	transition: transform var(--duration-standard) var(--ease-standard);
+	flex-shrink: 0;
+}
+
+.projectAccordionChevron.isOpen {
+	transform: rotate(-135deg);
+}
+
+.projectAccordionContent {
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows var(--duration-standard) var(--ease-standard);
+}
+
+.projectAccordionContent.isOpen {
+	grid-template-rows: 1fr;
+}
+
+.projectAccordionContentInner {
+	overflow: hidden;
+}
+
+.projectAccordionContentInner ul {
+	margin-top: var(--space-sm);
+	margin-bottom: var(--space-xs);
+}
+
 .device3dContainer {
 	width: 100%;
 	height: 480px;
@@ -929,6 +1004,7 @@ footer {
 	text-align: left;
 }
 
+
 .projectTitleBorder {
 	display: block;
 	text-align: left;
@@ -936,6 +1012,7 @@ footer {
 	position: sticky;
 	top: var(--space-xxl);
 	height: var(--space-lg);
+	z-index: 3;
 }
 
 .projectSectionLeft {
@@ -953,6 +1030,32 @@ footer {
 	row-gap: var(--space-md);
 	width: 100%;
 	line-height: 1.4;
+}
+
+.projectDescriptionHeader {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: var(--space-xs);
+	margin-bottom: var(--space-xs);
+}
+
+.projectDescriptionHeader h4 {
+	margin: 0;
+}
+
+.projectDescriptionIcon {
+	width: 24px;
+	height: 24px;
+	min-width: 24px;
+	flex-shrink: 0;
+	background-color: var(--color-primary);
+	mask-size: contain;
+	mask-repeat: no-repeat;
+	mask-position: center;
+	-webkit-mask-size: contain;
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-position: center;
 }
 
 .projectSectionGroups{
