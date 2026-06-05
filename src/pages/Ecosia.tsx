@@ -8,6 +8,7 @@ import { useBottomScrollConfetti } from '../hooks/useBottomScrollConfetti';
 import { useScrollFadeIn } from '../hooks/useScrollFadeIn';
 import { DescriptionIcon } from '../components/DescriptionIcon';
 import { ProjectAccordion } from '../components/ProjectAccordion';
+import { MetricCard } from '../components/MetricCard';
 
 export const Ecosia = () => {
   useBottomScrollConfetti();
@@ -243,7 +244,16 @@ export const Ecosia = () => {
           <div className="projectSection">
             <div className="projectSectionLeft"></div>
             <div className="projectSectionRight">
-              <div className="projectSectionGroups">
+              <div className="projectDescriptionHeader">
+                <DescriptionIcon src="/images/icons/icon-06.svg" />
+                <h4>Measurable success</h4>
+              </div>
+              <div className="metricCardRow">
+                <MetricCard description="Layout optimization increased retention by" value={1.2} suffix="%" decimals={1} delay={0} />
+                <MetricCard description="Ad optimization increased revenue by" value={15.8} suffix="%" decimals={1} delay={100} />
+                <MetricCard description="Ad click through rate" value={25} suffix="%" decimals={0} delay={200} />
+              </div>
+              <div className="projectSectionGroups" style={{ marginTop: 'var(--space-lg)' }}>
                 <div className="projectDescription">
                   <div className="projectDescriptionHeader">
                     <DescriptionIcon src="/images/icons/icon-09.svg" />
