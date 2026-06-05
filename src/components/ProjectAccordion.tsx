@@ -19,7 +19,9 @@ export const ProjectAccordion = ({ title, appIconClass, children }: ProjectAccor
       >
         <div className={`appIcon ${appIconClass} appIconSm`} aria-hidden="true"></div>
         <h4>{title}</h4>
-        <span className={`projectAccordionChevron${isOpen ? ' isOpen' : ''}`} aria-hidden="true"></span>
+        <div className="projectAccordionChevronWrapper" aria-hidden="true">
+          <span className={`projectAccordionChevron${isOpen ? ' isOpen' : ''}`}></span>
+        </div>
       </button>
       <div className={`projectAccordionContent${isOpen ? ' isOpen' : ''}`}>
         <div className="projectAccordionContentInner">

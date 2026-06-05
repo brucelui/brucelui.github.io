@@ -5,6 +5,7 @@ import { Footer } from '../components/Footer';
 import { WorkItem, StarRating } from '../components/WorkItem';
 import type { StatRow } from '../components/WorkItem';
 import { useBottomScrollConfetti } from '../hooks/useBottomScrollConfetti';
+import { useTypewriter } from '../hooks/useTypewriter';
 import { useScrollFadeIn } from '../hooks/useScrollFadeIn';
 import { trackEvent } from '../hooks/useAnalytics';
 
@@ -36,6 +37,7 @@ const caseStudyStats = (mau: string, reviewCount: string, reviewHref: string, aw
 export const Home = () => {
   useBottomScrollConfetti();
   useScrollFadeIn('.mainWorkBox');
+  const { displayed: sectionTitle } = useTypewriter('his featured works', 30);
 
   return (
     <>
@@ -59,7 +61,7 @@ export const Home = () => {
         <div className="pageContent">
           <div className="contentContainer">
             <div className="sectionTitle">
-              <h3>his featured works</h3>
+              <h3>{sectionTitle}</h3>
             </div>
 
             <WorkItem
