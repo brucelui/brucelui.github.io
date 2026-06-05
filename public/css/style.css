@@ -1051,7 +1051,7 @@ footer {
 .projectSectionRight {
 	display: flex;
 	flex-direction: column;
-	row-gap: var(--space-md);
+	row-gap: var(--space-sm);
 	width: 100%;
 	line-height: 1.4;
 }
