@@ -5,9 +5,14 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { SubWorkBox } from '../components/SubWorkBox';
 import { useBottomScrollConfetti } from '../hooks/useBottomScrollConfetti';
+import { useScrollFadeIn } from '../hooks/useScrollFadeIn';
+import { DescriptionIcon } from '../components/DescriptionIcon';
+import { ProjectAccordion } from '../components/ProjectAccordion';
+import { MetricCard } from '../components/MetricCard';
 
 export const Ecosia = () => {
   useBottomScrollConfetti();
+  useScrollFadeIn();
 
   return (
     <>
@@ -64,22 +69,36 @@ export const Ecosia = () => {
             <div className="projectSectionRight">
               <div className="projectSectionGroups">
                 <div className="projectDescription">
-                  <h4>What did I do?</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-01.svg" />
+                    <h4>What did I do?</h4>
+                  </div>
                   <ul>
-                    <li>Led cross functional teams to not only redesign and implement the rebrand update, but also directed brand strategy within the product.</li>
-                    <li>Responsible for the core search experience and managing the strategy pivot from traditional search to <b>AI-driven search</b>.</li>
-                    <li>Drove user research, launched experiments, identify mental models, and explored other revenue opportunities.</li>
+                    <li>Led the rebrand across design and engineering, from visual direction to shipping it in the product.</li>
+                    <li>Owned the core search experience and drove the strategic shift from traditional search to AI.</li>
+                    <li>Ran user research, launched experiments, and explored new ways to grow and monetize.</li>
                   </ul>
                 </div>
                 <div className="projectDescription">
-                  <h4>Who is Ecosia?</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-02.svg" />
+                    <h4>My impact</h4>
+                  </div>
                   <ul>
-                    <li>B-Corp organization that ambitiously focuses on solving the climate crisis by using profits for tree planting projects and other climate action initiatives. Ecosia shares transparently their monthly reports detailing how much they spend for their cause.</li>
-                    <li>Planted over 200,000,000 trees, with <b>20M+ active monthly users</b>.</li>
-                    <li>At the time there were around 100+ employees with 9 designers.</li>
+                    <li>Spearheaded several strategic core rebrand updates to the search experience, while leading cross-functional teams consisting of designers and engineers.</li>
+                    <li>Ad optimizations drove a 15.8% revenue increase and 25% CTR improvement.</li>
+                    <li>Layout improvements increased retention by 1.2% and ad CTR by 18%.</li>
+                    <li>Used the AI search launch as a retention lever, driving measurable growth in feature adoption and positive user feedback.</li>
                   </ul>
                 </div>
               </div>
+              <ProjectAccordion title="Never heard of Ecosia?" appIconClass="appIconEcosia">
+                <ul>
+                  <li>B-Corp organization that ambitiously focuses on solving the climate crisis by using profits for tree planting projects and other climate action initiatives. Ecosia shares transparently their monthly reports detailing how much they spend for their cause.</li>
+                  <li>Planted over 200,000,000 trees, with <b>20M+ active monthly users</b>.</li>
+                  <li>At the time there were around 100+ employees with 9 designers.</li>
+                </ul>
+              </ProjectAccordion>
             </div>
           </div>
 
@@ -91,7 +110,10 @@ export const Ecosia = () => {
             <div className="projectSectionRight">
               <div className="projectSectionGroups">
                 <div className="projectDescription">
-                  <h4>What is the product?</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-03.svg" />
+                    <h4>What is the product?</h4>
+                  </div>
                   <ul>
                     <li>It's a search engine just like Google or Bing where users can search whatever they desire to get answers via web results, images, videos, news, and now AI generated answers.</li>
                     <li>We also have features that promote more sustainable alternatives like taking trains over flights, or showcasing which and how much certain companies have made a positive climate impact.</li>
@@ -99,7 +121,10 @@ export const Ecosia = () => {
                   </ul>
                 </div>
                 <div className="projectDescription">
-                  <h4>User Problems Identified</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-04.svg" />
+                    <h4>User Problems Identified</h4>
+                  </div>
                   <ul>
                     <li><b>Low Trust in Search Quality:</b> Users found the results hard to read and perceived them as lower quality than competitors, even when the data was the same. Some rich content features were also reported to be missing or inaccurate.</li>
                     <li><b>Ad Frustration &amp; Confusion:</b> High ad density annoyed users, yet many didn't understand how the platform made money or how to manage their ad settings.</li>
@@ -108,7 +133,8 @@ export const Ecosia = () => {
                 </div>
               </div>
               <img className="imgShowcase" src="/images/ecosia_1.png" alt="" />
-              <p>By 2024, the rapid advancement of Large Language Models (LLMs) fundamentally shifted user expectations away from traditional search. For Ecosia, relying solely on legacy search models was no longer a sustainable long-term strategy for growth or monetization. The core challenge was a delicate balancing act: addressing the skepticism of our environmentally-conscious 'power users' who feared AI's carbon footprint, while simultaneously evolving the product to meet the demands of a new, AI-driven audience to prevent churn and remain market-relevant.</p>
+              <h4>Navigating the shift from traditional search to AI</h4>
+              <p>By 2024, LLMs (Large Language Models) had changed what users expected from search. For Ecosia, sticking with a traditional search model was no longer viable for growth or monetization. The challenge was balancing two opposing audiences: longtime users skeptical of AI's environmental cost, and a new audience who saw Ecosia as falling behind without it.</p>
             </div>
           </div>
 
@@ -120,7 +146,10 @@ export const Ecosia = () => {
             <div className="projectSectionRight">
               <div className="projectSectionGroups">
                 <div className="projectDescription">
-                  <h4>Top Product Goals</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-05.svg" />
+                    <h4>Top Product Goals</h4>
+                  </div>
                   <ul>
                     <li><b>Elevate the AI Experience:</b> Surpass traditional search quality by closing key feature gaps and delivering a smarter, faster way for users to find answers.</li>
                     <li><b>Profitable Innovation:</b> Strategically monetize AI search and optimize ad placement to ensure the search platform remains financially sustainable.</li>
@@ -128,7 +157,10 @@ export const Ecosia = () => {
                   </ul>
                 </div>
                 <div className="projectDescription">
-                  <h4>Key Metrics</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-06.svg" />
+                    <h4>Key Metrics</h4>
+                  </div>
                   <ul>
                     <li>Click-Through Rate</li>
                     <li>Retention Rate</li>
@@ -140,18 +172,22 @@ export const Ecosia = () => {
               <h4>Examples of the "How Might We" we pursued:</h4>
               <div className="projectCardRow">
                 <div className="projectCard">
+                  <span className="projectCardNumber" aria-hidden="true">1</span>
                   <h5>HMW...</h5>
                   <p>...better transition users from what they are used to from using Google to Ecosia?</p>
                 </div>
                 <div className="projectCard">
+                  <span className="projectCardNumber" aria-hidden="true">2</span>
                   <h5>HMW...</h5>
                   <p>...surface green alternatives without green-washing the users?</p>
                 </div>
                 <div className="projectCard">
+                  <span className="projectCardNumber" aria-hidden="true">3</span>
                   <h5>HMW...</h5>
                   <p>...make our search experience unique to for USP?</p>
                 </div>
                 <div className="projectCard">
+                  <span className="projectCardNumber" aria-hidden="true">4</span>
                   <h5>HMW...</h5>
                   <p>...improve the quality perception of our answers?</p>
                 </div>
@@ -167,7 +203,10 @@ export const Ecosia = () => {
             <div className="projectSectionRight">
               <div className="projectSectionGroups">
                 <div className="projectDescription">
-                  <h4>Team</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-07.svg" />
+                    <h4>Team</h4>
+                  </div>
                   <ul>
                     <li>3 Product Designers</li>
                     <li>1 Product Manager</li>
@@ -176,7 +215,10 @@ export const Ecosia = () => {
                   </ul>
                 </div>
                 <div className="projectDescription">
-                  <h4>Methods</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-08.svg" />
+                    <h4>Methods</h4>
+                  </div>
                   <ul>
                     <li><b>Qualitative Insights:</b> User tests, surveys, feedbacks</li>
                     <li><b>Quantitative Insights:</b> A/B tests</li>
@@ -186,13 +228,17 @@ export const Ecosia = () => {
                 </div>
               </div>
               <img className="imgShowcase" src="/images/ecosia_2.png" alt="" />
-              <p>Collaborating across two product teams, I led the design evolution of the core search results page. My work centered on three pivotal milestones that integrated a major brand refresh with data-driven optimization. By balancing brand identity with iterative A/B testing, I delivered a more cohesive user experience while successfully driving an uplift in key performance indicators, specifically Click-Through Rate (CTR).</p>
+              <h4>Search results, redesigned for performance</h4>
+              <p>I led the design of Ecosia's core search results page across two product teams. Over three milestones, I paired a company-wide rebrand with data-driven optimization through continuous A/B testing. The result was a measurable uplift in KPIs, specifically CTR.</p>
               <img className="imgShowcase" src="/images/ecosia_3.png" alt="" />
-              <p>During a company-wide rebrand, I spearheaded the translation of our new visual identity into the core product. Collaborating with both internal teams and external agencies, I developed a strategic roadmap to ensure the brand language felt native to the user experience rather than just an aesthetic layer. To drive alignment, I tailored my communication for different audiences: presenting strategic vision and UX impact to stakeholders and product teams, while delivering technical specifications and design system requirements to engineering teams.</p>
+              <h4>Rebrand as a product improvement, not just a visual update</h4>
+              <p>When the rebrand landed, I made sure it worked as a product improvement, not just a visual refresh. I set the direction for how the new identity translated into the core experience and worked closely with engineering to make sure nothing got lost in handoff.</p>
               <img className="imgShowcase" src="/images/ecosia_4.png" alt="" />
-              <p>My process begins with rigorous alignment on requirements and business goals. For larger initiatives, I facilitate discovery workshops with PMs, engineers, and stakeholders to co-create solutions and manage expectations. During these sessions, I synthesize user research, competitive benchmarking, and BI data to anchor our brainstorming in evidence. To manage complex scopes, I leverage the RICE framework to prioritize high-impact experiments and break down large-scale initiatives into actionable phases.</p>
+              <h4>Discovery, research, and prioritization</h4>
+              <p>Before any design work, I align with PMs and engineers on what problem we're actually solving. I run discovery workshops to map the space, pair that with competitive analysis to understand where the gaps are, and use RICE scoring to prioritize what will actually move the needle. All of this happens collaboratively, so everyone is bought in before a single design decision is made.</p>
               <img className="imgShowcase" src="/images/ecosia_5.png" alt="" />
-              <p>I maintained full-cycle ownership of user research; from defining initial hypotheses and test plans to executing moderated and unmoderated studies via UserTesting.com. I transformed raw findings into synthesized, actionable insights, presenting them to cross-functional stakeholders to drive data-informed design decisions and product strategy.</p>
+              <h4>Research that feeds decisions, not just decks</h4>
+              <p>I ran research end to end: writing test plans, running sessions on UserTesting.com, and turning findings into something actionable. The insights fed directly into prioritization decisions, not just slide decks.</p>
             </div>
           </div>
 
@@ -202,30 +248,35 @@ export const Ecosia = () => {
           <div className="projectSection">
             <div className="projectSectionLeft"></div>
             <div className="projectSectionRight">
-              <div className="projectSectionGroups">
+              <div className="projectDescriptionHeader">
+                <DescriptionIcon src="/images/icons/icon-06.svg" />
+                <h4>Measurable success</h4>
+              </div>
+              <div className="metricCardRow">
+                <MetricCard description="Layout optimization increased retention by" value={1.2} suffix="%" decimals={1} delay={0} />
+                <MetricCard description="Ad optimization increased revenue by" value={15.8} suffix="%" decimals={1} delay={100} />
+                <MetricCard description="Ad click through rate" value={25} suffix="%" decimals={0} delay={200} />
+              </div>
+              <div className="projectSectionGroups" style={{ marginTop: 'var(--space-lg)' }}>
                 <div className="projectDescription">
-                  <h4>My impact</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-09.svg" />
+                    <h4>My learnings</h4>
+                  </div>
                   <ul>
-                    <li>Spearheaded several strategic core rebrand updates to the search experience, while leading cross-functional teams consisting of designers and engineers.</li>
-                    <li>Optimizations to the ads delivered a 15.8% revenue increase and 25% ad CTR improvement.</li>
-                    <li>Layout optimizations delivered an increase in 1.2% retention and 18% ad CTR.</li>
-                    <li>Leveraged the AI search launch to maintain retention while driving a measurable uplift in AI-related feature adoption and positive feedback.</li>
-                  </ul>
-                </div>
-                <div className="projectDescription">
-                  <h4>My learnings</h4>
-                  <ul>
-                    <li><b>Data-Driven Influence:</b> I learned that pairing design intuition with hard data—and using AI to quickly synthesize that data—is the most effective way to align stakeholders and justify design priorities.</li>
-                    <li><b>Cross-Functional Fluency:</b> To ensure project success, I integrated myself into engineering rituals and adapted my presentation style to speak the specific "languages" of developers, PMs, and fellow designers.</li>
-                    <li><b>USP over Parity:</b> While closing feature gaps is necessary for survival, I realized that blindly chasing competitors is a race to the bottom; sustainable growth comes from doubling down on our Unique Selling Proposition (USP).</li>
+                    <li><b>Data moves faster than design.</b> I learned that pairing design intuition with hard data and using AI to quickly synthesize that data is the most effective way to align stakeholders and justify design priorities.</li>
+                    <li><b>Speaking the right language gets design taken seriously.</b> I learned to frame problems in metrics for PMs and in technical constraints for engineers. Same design decision, different angle, and it made buy-in on design work and debt significantly easier to get.</li>
+                    <li><b>Copying competitors only gets you to neutral.</b> While closing feature gaps is necessary for survival, I realized that blindly chasing competitors is a race to the bottom. Sustainable growth comes from doubling down on our Unique Selling Proposition (USP).</li>
                   </ul>
                 </div>
               </div>
               <img className="imgShowcase" src="/images/ecosia_7.png" alt="" />
-              <p>I built a library of Rich Content features. These are smart, easy-to-read cards on the main search results page like weather, maps, and calculators that give users instant answers directly on the search page. By developing a unified visual language for these components, I ensured a cohesive Ecosia brand experience that remains distinct from competitors. This is also an opportunity for us to partner with other companies like Omio, to develop features that promote greener travel alternatives.</p>
+              <h4>Rich answers, right on the results page</h4>
+              <p>I built a library of Rich Content features: dedicated result cards for weather, maps, travel, and calculators that surface quick answers directly on the search results page. I developed a unified visual language across all components to keep the experience cohesive and distinctly Ecosia. These components also opened up partnership opportunities with companies like AccuWeather and TripAdvisor, and helped promote greener travel options directly in search results.</p>
               <img className="imgShowcase" src="/images/ecosia_8.png" alt="" />
               <img className="imgShowcase" src="/images/ecosia_9.png" alt="" />
-              <p>Working with two other product designers, I led the redesign of our AI search experience as part of a major company-wide rebrand. We evolved the tool into a modern, answer-first interface to meet the demand for AI while providing a greener alternative to competitors. Despite some initial backlash from legacy users, the redesign led to a measurable uplift in traffic and usage, proving that the new experience successfully captured a larger, modern audience.</p>
+              <h4>From traditional search to AI-first answers</h4>
+              <p>Working with two other product designers, I led the redesign of Ecosia's AI search experience as part of a company-wide rebrand. We rebuilt it into a modern, answer-first interface that met growing demand for AI while staying true to Ecosia's values. Despite early pushback from longtime users, the redesign drove a measurable uplift in traffic and usage, showing the new experience resonated with a broader audience.</p>
             </div>
           </div>
 

@@ -5,10 +5,14 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { SubWorkBox } from '../components/SubWorkBox';
 import { useBottomScrollConfetti } from '../hooks/useBottomScrollConfetti';
+import { useScrollFadeIn } from '../hooks/useScrollFadeIn';
+import { DescriptionIcon } from '../components/DescriptionIcon';
+import { ProjectAccordion } from '../components/ProjectAccordion';
 // import { Device3DMockup } from '../components/Device3DMockup'; // reserved for 3D header redesign
 
 export const N26 = () => {
   useBottomScrollConfetti();
+  useScrollFadeIn();
 
   return (
     <>
@@ -69,7 +73,10 @@ export const N26 = () => {
             <div className="projectSectionRight">
               <div className="projectSectionGroups">
                 <div className="projectDescription">
-                  <h4>What did I do?</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-01.svg" />
+                    <h4>What did I do?</h4>
+                  </div>
                   <ul>
                     <li>Led efforts to improve a core feature for a mobile banking app.</li>
                     <li>Introduced new creation flows to improve discoverability and understanding how users can maximize the way how they can save their money.</li>
@@ -77,14 +84,24 @@ export const N26 = () => {
                   </ul>
                 </div>
                 <div className="projectDescription">
-                  <h4>Who is N26?</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-02.svg" />
+                    <h4>My impact</h4>
+                  </div>
                   <ul>
-                    <li>N26 is a European digital mobile bank based in Berlin, Germany.</li>
-                    <li>They disrupted the traditional way of how Europeans banked and was widely known for making banking easy and convenient.</li>
-                    <li>At the time there were around 1500+ employees with around 40+ designers.</li>
+                    <li>Redesigned the details page which led to a <b>252% increase in adoption</b> of less used features.</li>
+                    <li>Introducing a new creation flow <b>reduced the number of steps to discover features by 3</b>, which resulted in positive feedback from users in a better understanding of additional ways to use Spaces.</li>
+                    <li>Crafted a <b>short and long term strategies</b> envisioning how Spaces will evolve to support more use cases and plan where new features will live.</li>
                   </ul>
                 </div>
               </div>
+              <ProjectAccordion title="Never heard of N26?" appIconClass="appIconN26">
+                <ul>
+                  <li>N26 is a European digital mobile bank based in Berlin, Germany.</li>
+                  <li>They disrupted the traditional way of how Europeans banked and was widely known for making banking easy and convenient.</li>
+                  <li>At the time there were around 1500+ employees with around 40+ designers.</li>
+                </ul>
+              </ProjectAccordion>
             </div>
           </div>
 
@@ -96,14 +113,20 @@ export const N26 = () => {
             <div className="projectSectionRight">
               <div className="projectSectionGroups">
                 <div className="projectDescription">
-                  <h4>What is Spaces?</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-03.svg" />
+                    <h4>What is Spaces?</h4>
+                  </div>
                   <ul>
                     <li>Spaces is a feature that enables N26 users to organize their money into multiple sub-accounts for different purposes. (ex. saving up for a vacation, emergency fund, household expenses)</li>
                     <li>Users can set savings goals, automate deposits, and even share Spaces with others, and more.</li>
                   </ul>
                 </div>
                 <div className="projectDescription">
-                  <h4>User Problems Identified</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-04.svg" />
+                    <h4>User Problems Identified</h4>
+                  </div>
                   <ul>
                     <li>Users do not fully comprehend all the utilities Spaces had to offer, especially in the beginning despite there existing an onboarding flow.</li>
                     <li>Advanced features were buried 3-4 steps deep in the user flow after creating a space; creating high interaction costs and low discoverability.</li>
@@ -123,7 +146,10 @@ export const N26 = () => {
             <div className="projectSectionRight">
               <div className="projectSectionGroups">
                 <div className="projectDescription">
-                  <h4>Top Product Goals</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-05.svg" />
+                    <h4>Top Product Goals</h4>
+                  </div>
                   <ul>
                     <li>Increase engagement within the product when using Spaces.</li>
                     <li>Improve adoption of low usage but highly requested features.</li>
@@ -131,7 +157,10 @@ export const N26 = () => {
                   </ul>
                 </div>
                 <div className="projectDescription">
-                  <h4>Key Metrics</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-06.svg" />
+                    <h4>Key Metrics</h4>
+                  </div>
                   <ul>
                     <li>Feature adoption rate</li>
                     <li>Task completion rate</li>
@@ -142,14 +171,17 @@ export const N26 = () => {
               <h4>Examples of the "How Might We" we pursued:</h4>
               <div className="projectCardRow">
                 <div className="projectCard">
+                  <span className="projectCardNumber" aria-hidden="true">1</span>
                   <h5>HMW...</h5>
                   <p>...surface features early in the user journey?</p>
                 </div>
                 <div className="projectCard">
+                  <span className="projectCardNumber" aria-hidden="true">2</span>
                   <h5>HMW...</h5>
                   <p>...help users understand how else they can use Spaces?</p>
                 </div>
                 <div className="projectCard">
+                  <span className="projectCardNumber" aria-hidden="true">3</span>
                   <h5>HMW...</h5>
                   <p>...increase awareness of other feature offerings from Spaces?</p>
                 </div>
@@ -165,7 +197,10 @@ export const N26 = () => {
             <div className="projectSectionRight">
               <div className="projectSectionGroups">
                 <div className="projectDescription">
-                  <h4>Team</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-07.svg" />
+                    <h4>Team</h4>
+                  </div>
                   <ul>
                     <li>2 Product Designers</li>
                     <li>1 Product Manager</li>
@@ -174,7 +209,10 @@ export const N26 = () => {
                   </ul>
                 </div>
                 <div className="projectDescription">
-                  <h4>Methods</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-08.svg" />
+                    <h4>Methods</h4>
+                  </div>
                   <ul>
                     <li>User Interviews/Tests</li>
                     <li>Card sorting</li>
@@ -199,15 +237,10 @@ export const N26 = () => {
             <div className="projectSectionRight">
               <div className="projectSectionGroups">
                 <div className="projectDescription">
-                  <h4>My impact</h4>
-                  <ul>
-                    <li>Redesigned the details page which led to a <b>252% increase in adoption</b> of less used features.</li>
-                    <li>Introducing a new creation flow <b>reduced the number of steps to discover features by 3</b>, which resulted in positive feedback from users in a better understanding of additional ways to use Spaces.</li>
-                    <li>Crafted a <b>short and long term strategies</b> envisioning how Spaces will evolve to support more use cases and plan where new features will live.</li>
-                  </ul>
-                </div>
-                <div className="projectDescription">
-                  <h4>My learnings</h4>
+                  <div className="projectDescriptionHeader">
+                    <DescriptionIcon src="/images/icons/icon-09.svg" />
+                    <h4>My learnings</h4>
+                  </div>
                   <ul>
                     <li>Rather than explaining, showcasing different ways a feature can be used gives a higher chance of discoverability and comprehension.</li>
                     <li>Don't overcomplicate designs, and always be prepared to throw away ideas. Pairing with another designer and involving stakeholders helped iterate and improve the designs.</li>
