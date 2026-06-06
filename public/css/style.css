@@ -1082,8 +1082,8 @@ footer {
 	position: absolute;
 	inset: 0;
 	background-image: url('../images/ecosia_header_bg.png');
-	background-size: contain;
-	background-position: center bottom;
+	background-size: auto 100%;
+	background-position: center center;
 	background-repeat: no-repeat;
 	opacity: 0.5;
 	z-index: 0;
@@ -1977,6 +1977,18 @@ footer img {
 }
 .formobile {
 	display: block;
+}
+
+.projectTop {
+	overflow: visible;
+}
+
+.device3dContainer {
+	border-radius: 0;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100vw;
 }
 
 } /* end @media (min-width: 600px) and (max-width: 980px) */
