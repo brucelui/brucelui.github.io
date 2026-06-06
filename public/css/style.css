@@ -833,6 +833,8 @@ footer {
 	color: var(--color-secondary);
 	padding: var(--space-lg);
 	column-gap: var(--space-lg);
+	background-color: var(--color-primary);
+	border-radius: var(--space-lg);
 }
 
 .projectTopContentList a{
@@ -1067,11 +1069,29 @@ footer {
 }
 
 .device3dContainer {
+	position: relative;
 	width: 100%;
-	height: 480px;
+	height: 600px;
 	border-radius: var(--space-lg);
 	overflow: hidden;
 	cursor: grab;
+}
+
+.device3dContainer::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-image: url('../images/ecosia_header_bg.png');
+	background-size: contain;
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	opacity: 0.5;
+	z-index: 0;
+}
+
+.device3dContainer canvas {
+	position: relative;
+	z-index: 1;
 }
 .device3dContainer:active {
 	cursor: grabbing;

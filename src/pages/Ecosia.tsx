@@ -6,6 +6,7 @@ import { Footer } from '../components/Footer';
 import { SubWorkBox } from '../components/SubWorkBox';
 import { useBottomScrollConfetti } from '../hooks/useBottomScrollConfetti';
 import { useScrollFadeIn } from '../hooks/useScrollFadeIn';
+import { Device3DMockup } from '../components/Device3DMockup';
 import { DescriptionIcon } from '../components/DescriptionIcon';
 import { ProjectAccordion } from '../components/ProjectAccordion';
 import { MetricCard } from '../components/MetricCard';
@@ -19,10 +20,8 @@ export const Ecosia = () => {
       <Header />
 
       <div className="projectTopContainer" id="main-content">
-        <div className="projectTop">
-          <div className="projectTopThumbnail topEcosia">
-            <img className="topicon" src="/images/ecosia_top.png" alt="" />
-          </div>
+        <div className="projectTop projectTopNoBackground">
+          <Device3DMockup screenImage="/images/ecosia_screen.jpg" />
           <div className="projectTopContent">
             <div className="appTitle">
               <div className="appIcon appIconEcosia"></div>
