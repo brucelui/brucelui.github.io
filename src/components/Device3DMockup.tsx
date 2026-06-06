@@ -3,9 +3,41 @@ import * as THREE from 'three';
 
 interface Device3DMockupProps {
   screenImage?: string;
+  restRX?: number;
+  restRZ?: number;
+  restRY?: number;
+  startRX?: number;
+  startRZ?: number;
+  bgClass?: string;
+  cameraX?: number;
+  cameraY?: number;
+  cameraZ?: number;
+  restScale?: number;
+  restX?: number;
+  restY?: number;
+  mobileRestX?: number;  // overrides restX on mobile (≤599px)
+  mobileRestY?: number;  // overrides restY on mobile
+  mobileRestScale?: number; // overrides restScale on mobile
 }
 
-export const Device3DMockup = ({ screenImage = '/images/n26_screen.jpg' }: Device3DMockupProps) => {
+export const Device3DMockup = ({
+  screenImage = '/images/n26_screen.jpg',
+  restRX = -Math.PI / 2,
+  restRZ = Math.PI / 2.8,
+  restRY = 0,
+  startRX,
+  startRZ,
+  bgClass,
+  cameraX = 4.2,
+  cameraY = 9.0,
+  cameraZ = 5.5,
+  restScale = 2.2,
+  restX = 0,
+  restY = -1.5,
+  mobileRestX,
+  mobileRestY,
+  mobileRestScale,
+}: Device3DMockupProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -29,7 +61,7 @@ export const Device3DMockup = ({ screenImage = '/images/n26_screen.jpg' }: Devic
     // ─── Scene & Camera ────────────────────────────────────────────────────────
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(42, w / h, 0.1, 200);
-    camera.position.set(4.2, 9.0, 5.5);
+    camera.position.set(cameraX, cameraY, cameraZ);
     camera.lookAt(0, 0, 0);
 
     // ─── Lights ────────────────────────────────────────────────────────────────
@@ -90,8 +122,7 @@ export const Device3DMockup = ({ screenImage = '/images/n26_screen.jpg' }: Devic
 
     // ─── Device group ──────────────────────────────────────────────────────────
     const group = new THREE.Group();
-    group.rotation.x = 1.063;  // start facing camera; intro animates to resting position
-    group.rotation.z = 2.70;
+    // Initial rotation set after START values are declared (see animate loop setup below)
     group.scale.setScalar(3.5); // start zoomed in; intro animates to resting scale
     scene.add(group);
 
@@ -206,13 +237,19 @@ export const Device3DMockup = ({ screenImage = '/images/n26_screen.jpg' }: Devic
     resizeObserver.observe(container);
 
     // ─── Animate ───────────────────────────────────────────────────────────────
-    const DEFAULT_RX = -Math.PI / 2;
-    const DEFAULT_RZ =  Math.PI / 2.8;
+    const DEFAULT_RX = restRX;
+    const DEFAULT_RZ = restRZ;
     let BASE_RX = DEFAULT_RX;
     let BASE_RZ = DEFAULT_RZ;
-    // Calculated to point screen normal toward camera at (4.2, 9.0, 5.5)
-    const START_RX = 1.063;
-    const START_RZ = 2.70;
+    // Intro starts from the "opposite" of the resting position for a nice transition.
+    // If resting is upright (1.063), intro starts flat; if resting is flat, intro starts upright.
+    // If explicit start rotation provided, use it; otherwise default to opposite of rest.
+    // isUpright: resting in the upright/facing-camera orientation (restRX ≈ π - 1.063 ≈ 2.08)
+    const isUpright = restRX > Math.PI / 2;
+    const START_RX = startRX ?? (isUpright ? -Math.PI / 2 : 1.063);
+    const START_RZ = startRZ ?? (isUpright ? Math.PI / 2.8 : 2.70);
+    group.rotation.x = START_RX;
+    group.rotation.z = START_RZ;
     const INTRO_MS = 2200;       // duration of intro animation
     const introStart = Date.now();
     let animId: number;
@@ -230,12 +267,18 @@ export const Device3DMockup = ({ screenImage = '/images/n26_screen.jpg' }: Devic
       const introRZ = START_RZ + (BASE_RZ - START_RZ) * eased;
 
       group.rotation.x = introRX + ty * 0.12 * eased;
+      group.rotation.y = restRY;
       group.rotation.z = introRZ + tx * 0.12 * eased;
-      const p = (window as any).__device ?? { y: -1.5, scale: 2.2, rx: DEFAULT_RX, rz: DEFAULT_RZ };
+      const isMobile = window.innerWidth <= 599;
+      const activeX = isMobile ? (mobileRestX ?? 0) : restX;
+      const activeY = isMobile ? (mobileRestY ?? restY) : restY;
+      const activeScale = isMobile ? (mobileRestScale ?? restScale) : restScale;
+      const p = (window as any).__device ?? { x: activeX, y: activeY, scale: activeScale, rx: DEFAULT_RX, rz: DEFAULT_RZ };
       BASE_RX = p.rx ?? DEFAULT_RX;
       BASE_RZ = p.rz ?? DEFAULT_RZ;
-      group.scale.setScalar(3.5 - (3.5 - p.scale) * eased);
-      group.position.y = p.y;
+      group.scale.setScalar(3.5 - (3.5 - (p.scale ?? activeScale)) * eased);
+      group.position.x = (p.x ?? activeX) * eased;
+      group.position.y = p.y ?? activeY;
       keyLight.position.set(8 - tx * 3, 4, -6 + ty * 3);
       renderer.render(scene, camera);
     };
@@ -252,5 +295,5 @@ export const Device3DMockup = ({ screenImage = '/images/n26_screen.jpg' }: Devic
     };
   }, []);
 
-  return <div ref={containerRef} className="device3dContainer" />;
+  return <div ref={containerRef} className={`device3dContainer${bgClass ? ` ${bgClass}` : ''}`} />;
 };

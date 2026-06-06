@@ -74,7 +74,7 @@ export const Home = () => {
               subtitle="green tech, search engine"
               stats={caseStudyStats(
                 '20M+',
-                '7.7k+',
+                '8.5k+',
                 'https://apps.apple.com/us/app/ecosia-search-to-plant-trees/id670881887',
                 'German Sustainability Award 2024',
                 'https://www.linkedin.com/posts/ecosia_ecosia-wins-the-german-sustainability-award-activity-7268245915767881729-sWXQ',
@@ -124,7 +124,7 @@ export const Home = () => {
               subtitle="travel, hotel search"
               stats={caseStudyStats(
                 '55M+',
-                '256k+',
+                '271k+',
                 'https://apps.apple.com/us/app/trivago-compare-hotel-prices/id376888389',
                 'MobileAppDaily Best Hotel Booking App',
                 'https://www.mobileappdaily.com/products/best-hotel-booking-apps',

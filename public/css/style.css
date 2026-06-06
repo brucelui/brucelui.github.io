@@ -1089,6 +1089,14 @@ footer {
 	z-index: 0;
 }
 
+.device3dBgN26::before {
+	background-image: url('../images/n26_header_bg.png');
+}
+
+.device3dBgTrivago::before {
+	background-image: url('../images/trivago_header_bg.png');
+}
+
 .device3dContainer canvas {
 	position: relative;
 	z-index: 1;
@@ -1457,6 +1465,26 @@ p {
 	margin-left: var(--space-md);
 	margin-right: var(--space-md);
 }
+
+.projectTop {
+	overflow: visible;
+}
+
+.device3dContainer {
+	border-radius: 0;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100vw;
+	-webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+	mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+}
+
+.device3dContainer::before {
+	background-size: auto 100%;
+	background-position: center center;
+}
+
 .projectTopThumbnail {
 	height: 300px;
 }
