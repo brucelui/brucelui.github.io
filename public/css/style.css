@@ -1211,7 +1211,7 @@ footer {
 	background-size: auto;
 	position: sticky;
 	top: 0px;
-	z-index: 2;
+	z-index: 8;
 }
 
 .projectSection {
@@ -1287,8 +1287,10 @@ footer {
 .projectEnd{
 	display: flex;
 	flex-direction: column;
+	padding-top: var(--space-lg);
 	padding-bottom: var(--space-lg);
-	z-index: 1;
+	position: relative;
+	z-index: 5;
 }
 
 .projTitle {
@@ -1530,6 +1532,12 @@ p {
 
 .projectTop {
 	overflow: visible;
+}
+
+.projectSectionLeft {
+	padding-bottom: var(--space-lg);
+	-webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+	mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }
 
 .device3dContainer {
