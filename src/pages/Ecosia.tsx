@@ -283,7 +283,7 @@ export const Ecosia = () => {
             <div className="projectSectionLeft"><br /></div>
           </div>
           <div className="projectEnd">
-            <p><h2>try doing a search over at <a href="https://www.ecosia.org">Ecosia</a> to test it out!</h2></p>
+            <h2>try doing a search over at <a href="https://www.ecosia.org">Ecosia</a> to test it out!</h2>
           </div>
 
         </div>

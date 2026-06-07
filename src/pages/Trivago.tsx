@@ -278,7 +278,7 @@ export const Trivago = () => {
             <div className="projectSectionLeft"><br /></div>
           </div>
           <div className="projectEnd">
-            <p><h2>check out the app on your favourite OS</h2></p>
+            <h2>check out the app on your favourite OS</h2>
             <br />
             <a href="https://itunes.apple.com/us/app/id376888389?mt=8">
               <img alt="Download on the App Store" src="/images/ios_button.svg" />

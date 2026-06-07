@@ -271,7 +271,7 @@ export const N26 = () => {
             <div className="projectSectionLeft"><br /></div>
           </div>
           <div className="projectEnd">
-            <p><h2>check out the app on your favourite OS</h2></p>
+            <h2>check out the app on your favourite OS</h2>
             <br />
             <a href="https://apps.apple.com/de/app/n26-die-mobile-bank/id956857223?l=en&mt=8">
               <img alt="Download on the App Store" src="/images/ios_button.svg" />
