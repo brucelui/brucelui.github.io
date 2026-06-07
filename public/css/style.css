@@ -833,6 +833,8 @@ footer {
 	color: var(--color-secondary);
 	padding: var(--space-lg);
 	column-gap: var(--space-lg);
+	background-color: var(--color-primary);
+	border-radius: var(--space-lg);
 }
 
 .projectTopContentList a{
@@ -1068,10 +1070,98 @@ footer {
 
 .device3dContainer {
 	width: 100%;
-	height: 480px;
+	background: none;
+	border: none;
+	padding: 0;
+	text-align: left;
+}
+
+.projectAccordionToggle h4 {
+	margin: 0;
+	flex: 1;
+}
+
+.projectAccordionChevronWrapper {
+	width: 48px;
+	height: 48px;
+	min-width: 48px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: transparent;
+	transition: background-color var(--duration-standard) var(--ease-standard);
+}
+
+.projectAccordionToggle:hover .projectAccordionChevronWrapper {
+	background-color: rgba(43, 43, 43, 0.2);
+}
+
+.projectAccordionChevron {
+	width: 10px;
+	height: 10px;
+	border-right: 2px solid var(--color-primary);
+	border-bottom: 2px solid var(--color-primary);
+	transform: rotate(45deg);
+	transition: transform var(--duration-standard) var(--ease-standard);
+	flex-shrink: 0;
+}
+
+.projectAccordionChevron.isOpen {
+	transform: rotate(-135deg);
+}
+
+.projectAccordionContent {
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows var(--duration-standard) var(--ease-standard);
+}
+
+.projectAccordionContent.isOpen {
+	grid-template-rows: 1fr;
+}
+
+.projectAccordionContentInner {
+	overflow: hidden;
+}
+
+.projectAccordionContentInner ul {
+	margin-top: var(--space-sm);
+	margin-bottom: var(--space-xs);
+}
+
+.device3dContainer {
+	position: relative;
+	width: 100%;
+	height: 600px;
 	border-radius: var(--space-lg);
 	overflow: hidden;
 	cursor: grab;
+}
+
+.device3dContainer::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-image: url('../images/ecosia_header_bg.png');
+	background-size: auto 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	opacity: 0.5;
+	z-index: 0;
+}
+
+.device3dBgN26::before {
+	background-image: url('../images/n26_header_bg.png');
+}
+
+.device3dBgTrivago::before {
+	background-image: url('../images/trivago_header_bg.png');
+}
+
+.device3dContainer canvas {
+	position: relative;
+	z-index: 1;
 }
 .device3dContainer:active {
 	cursor: grabbing;
@@ -1121,7 +1211,7 @@ footer {
 	background-size: auto;
 	position: sticky;
 	top: 0px;
-	z-index: 2;
+	z-index: 8;
 }
 
 .projectSection {
@@ -1197,8 +1287,10 @@ footer {
 .projectEnd{
 	display: flex;
 	flex-direction: column;
+	padding-top: var(--space-lg);
 	padding-bottom: var(--space-lg);
-	z-index: 1;
+	position: relative;
+	z-index: 5;
 }
 
 .projTitle {
@@ -1437,6 +1529,33 @@ p {
 	margin-left: var(--space-md);
 	margin-right: var(--space-md);
 }
+
+.projectTop {
+	overflow: visible;
+}
+
+.projectSectionLeft {
+	padding-bottom: var(--space-lg);
+	-webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+	mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+.device3dContainer {
+	border-radius: 0;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100vw;
+	height: 75vh;
+	-webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+	mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+}
+
+.device3dContainer::before {
+	background-size: auto 100%;
+	background-position: center center;
+}
+
 .projectTopThumbnail {
 	height: 300px;
 }
@@ -1929,6 +2048,18 @@ footer img {
 }
 .formobile {
 	display: block;
+}
+
+.projectTop {
+	overflow: visible;
+}
+
+.device3dContainer {
+	border-radius: 0;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100vw;
 }
 
 } /* end @media (min-width: 600px) and (max-width: 980px) */

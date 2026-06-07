@@ -1,7 +1,43 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
-export const Device3DMockup = () => {
+interface Device3DMockupProps {
+  screenImage?: string;
+  restRX?: number;
+  restRZ?: number;
+  restRY?: number;
+  startRX?: number;
+  startRZ?: number;
+  bgClass?: string;
+  cameraX?: number;
+  cameraY?: number;
+  cameraZ?: number;
+  restScale?: number;
+  restX?: number;
+  restY?: number;
+  mobileRestX?: number;  // overrides restX on mobile (≤599px)
+  mobileRestY?: number;  // overrides restY on mobile
+  mobileRestScale?: number; // overrides restScale on mobile
+}
+
+export const Device3DMockup = ({
+  screenImage = '/images/n26_screen.jpg',
+  restRX = -Math.PI / 2,
+  restRZ = Math.PI / 2.8,
+  restRY = 0,
+  startRX,
+  startRZ,
+  bgClass,
+  cameraX = 4.2,
+  cameraY = 9.0,
+  cameraZ = 5.5,
+  restScale = 2.2,
+  restX = 0,
+  restY = -1.5,
+  mobileRestX,
+  mobileRestY,
+  mobileRestScale,
+}: Device3DMockupProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -12,8 +48,8 @@ export const Device3DMockup = () => {
     const h = container.clientHeight;
 
     // ─── Renderer ──────────────────────────────────────────────────────────────
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, logarithmicDepthBuffer: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 3));
     renderer.setSize(w, h);
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
@@ -25,11 +61,11 @@ export const Device3DMockup = () => {
     // ─── Scene & Camera ────────────────────────────────────────────────────────
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(42, w / h, 0.1, 200);
-    camera.position.set(4.2, 9.0, 5.5);
+    camera.position.set(cameraX, cameraY, cameraZ);
     camera.lookAt(0, 0, 0);
 
     // ─── Lights ────────────────────────────────────────────────────────────────
-    scene.add(new THREE.AmbientLight(0xffffff, 0.2));
+    scene.add(new THREE.AmbientLight(0xffffff, 0.5));
 
     const keyLight = new THREE.DirectionalLight(0xffffff, 1.8);
     keyLight.position.set(8, 4, -6);
@@ -41,7 +77,7 @@ export const Device3DMockup = () => {
     keyLight.shadow.camera.right  = 12;
     keyLight.shadow.camera.top    = 12;
     keyLight.shadow.camera.bottom = -12;
-    keyLight.shadow.radius = 1.5;
+    keyLight.shadow.radius = 6;
     keyLight.shadow.bias   = -0.0003;
     scene.add(keyLight);
 
@@ -53,15 +89,7 @@ export const Device3DMockup = () => {
     fillLight.position.set(0, 10, 3);
     scene.add(fillLight);
 
-    // ─── Ground shadow plane ───────────────────────────────────────────────────
-    const ground = new THREE.Mesh(
-      new THREE.PlaneGeometry(30, 30),
-      new THREE.ShadowMaterial({ opacity: 0.55 })
-    );
-    ground.rotation.x = -Math.PI / 2;
-    ground.position.y = 1.62;
-    ground.receiveShadow = true;
-    scene.add(ground);
+    // Ground shadow plane removed — shadows kept on device geometry only.
 
     // ─── Rounded rect shape helper ─────────────────────────────────────────────
     function roundedRect(rw: number, rh: number, r: number) {
@@ -86,8 +114,7 @@ export const Device3DMockup = () => {
 
     const Z_BACK   = -D / 2;
     const Z_FRONT  = D / 2 + 0.056;
-    const Z_SCREEN = Z_FRONT + 0.004;
-    void Z_SCREEN; // used only as reference comment in original
+    const Z_SCREEN = Z_FRONT + 0.015; // physically above front cap — no polygon offset needed
 
     // ─── Materials ─────────────────────────────────────────────────────────────
     const matteMat = new THREE.MeshStandardMaterial({ color: 0xfafafa, roughness: 0.6, metalness: 0.0 });
@@ -95,22 +122,20 @@ export const Device3DMockup = () => {
 
     // ─── Device group ──────────────────────────────────────────────────────────
     const group = new THREE.Group();
-    group.rotation.x = -Math.PI / 2;
-    group.rotation.z =  Math.PI / 2.8;
-    group.scale.setScalar(1.65);
+    // Initial rotation set after START values are declared (see animate loop setup below)
+    group.scale.setScalar(3.5); // start zoomed in; intro animates to resting scale
     scene.add(group);
 
     // Body
-    const bodyMesh = new THREE.Mesh(
-      new THREE.ExtrudeGeometry(roundedRect(W, H, CR), {
-        depth: D,
-        bevelEnabled:   true,
-        bevelThickness: 0.055,
-        bevelSize:      0.055,
-        bevelSegments:  12,
-      }),
-      matteMat
-    );
+    const bodyGeo = new THREE.ExtrudeGeometry(roundedRect(W, H, CR), {
+      depth: D,
+      bevelEnabled:   true,
+      bevelThickness: 0.055,
+      bevelSize:      0.055,
+      bevelSegments:  32,
+    });
+    bodyGeo.computeVertexNormals();
+    const bodyMesh = new THREE.Mesh(bodyGeo, matteMat);
     bodyMesh.position.z = Z_BACK;
     bodyMesh.castShadow = true;
     bodyMesh.receiveShadow = true;
@@ -118,23 +143,23 @@ export const Device3DMockup = () => {
 
     // Black front cap
     const frontCap = new THREE.Mesh(
-      new THREE.ShapeGeometry(roundedRect(W, H, CR), 48),
+      new THREE.ShapeGeometry(roundedRect(W, H, CR), 96),
       new THREE.MeshStandardMaterial({
         color: 0x080808,
         roughness: 0.5,
         metalness: 0.0,
         polygonOffset: true,
-        polygonOffsetFactor: 1,
-        polygonOffsetUnits: 1,
+        polygonOffsetFactor: 4,
+        polygonOffsetUnits: 4,
       })
     );
     frontCap.position.z = Z_FRONT;
     group.add(frontCap);
 
     // Screen
-    const screenTexture = new THREE.TextureLoader().load('/images/n26_screen.jpg');
+    const screenTexture = new THREE.TextureLoader().load(screenImage);
     screenTexture.colorSpace = THREE.SRGBColorSpace;
-    const screenGeo = new THREE.ShapeGeometry(roundedRect(W - 0.14, H - 0.14, CR - 0.07), 48);
+    const screenGeo = new THREE.ShapeGeometry(roundedRect(W - 0.14, H - 0.14, CR - 0.07), 96);
     // ShapeGeometry uses raw x/y positions as UVs; remap to [0, 1]
     const sw = W - 0.14;
     const sh = H - 0.14;
@@ -153,12 +178,10 @@ export const Device3DMockup = () => {
       new THREE.MeshBasicMaterial({
         map: screenTexture,
         color: 0xe8e8e8,
-        polygonOffset: true,
-        polygonOffsetFactor: -1,
-        polygonOffsetUnits: -1,
+        polygonOffset: false,
       })
     );
-    screenMesh.position.z = Z_FRONT;
+    screenMesh.position.z = Z_SCREEN;
     screenMesh.receiveShadow = true;
     group.add(screenMesh);
 
@@ -185,7 +208,7 @@ export const Device3DMockup = () => {
 
     ([ [-0.17, -0.17], [-0.17, 0.17], [0.17, -0.17], [0.17, 0.17] ] as [number, number][]).forEach(([ox, oy]) => {
       const lens = new THREE.Mesh(
-        new THREE.CylinderGeometry(0.085, 0.085, 0.05, 32),
+        new THREE.CylinderGeometry(0.085, 0.085, 0.05, 64),
         new THREE.MeshStandardMaterial({ color: 0x1a1a1a, roughness: 0.2, metalness: 0.1 })
       );
       lens.rotation.x = Math.PI / 2;
@@ -193,33 +216,6 @@ export const Device3DMockup = () => {
       group.add(lens);
     });
 
-    // ─── Scale figures ─────────────────────────────────────────────────────────
-    function addFigure(path: string, x: number, z: number, height: number, rotY = 0) {
-      const geo = new THREE.PlaneGeometry(height, height);
-      const tex = new THREE.TextureLoader().load(path, (t) => {
-        mesh.scale.x = t.image.width / t.image.height;
-      });
-      tex.colorSpace = THREE.SRGBColorSpace;
-      const mat = new THREE.MeshStandardMaterial({
-        map: tex, transparent: true, alphaTest: 0.5, side: THREE.DoubleSide,
-      });
-      const depthMat = new THREE.MeshDepthMaterial({
-        depthPacking: THREE.RGBADepthPacking, map: tex, alphaTest: 0.5,
-      });
-      const mesh = new THREE.Mesh(geo, mat);
-      mesh.customDepthMaterial = depthMat;
-      mesh.castShadow = true;
-      mesh.receiveShadow = true;
-      mesh.position.set(x, 1.62 + height / 2, z);
-      mesh.rotation.y = rotY;
-      scene.add(mesh);
-      return mesh;
-    }
-
-    const F1_BASE_X = 1.5, F1_BASE_Z = -1.0, F1_H = 1.0;
-    const figure1 = addFigure('/images/figure1.png', F1_BASE_X, F1_BASE_Z, F1_H, Math.PI * 0.1);
-    addFigure('/images/figure2.png', -2.4,  0.8, 0.9,  Math.PI * 0.6);
-    addFigure('/images/figure3.png', -1.5,  1.8, 1.1, -Math.PI * 0.2);
 
     // ─── Mouse tracking ────────────────────────────────────────────────────────
     let mx = 0, my = 0, tx = 0, ty = 0;
@@ -241,20 +237,49 @@ export const Device3DMockup = () => {
     resizeObserver.observe(container);
 
     // ─── Animate ───────────────────────────────────────────────────────────────
-    const BASE_RX = -Math.PI / 2;
-    const BASE_RZ =  Math.PI / 2.8;
+    const DEFAULT_RX = restRX;
+    const DEFAULT_RZ = restRZ;
+    let BASE_RX = DEFAULT_RX;
+    let BASE_RZ = DEFAULT_RZ;
+    // Intro starts from the "opposite" of the resting position for a nice transition.
+    // If resting is upright (1.063), intro starts flat; if resting is flat, intro starts upright.
+    // If explicit start rotation provided, use it; otherwise default to opposite of rest.
+    // isUpright: resting in the upright/facing-camera orientation (restRX ≈ π - 1.063 ≈ 2.08)
+    const isUpright = restRX > Math.PI / 2;
+    const START_RX = startRX ?? (isUpright ? -Math.PI / 2 : 1.063);
+    const START_RZ = startRZ ?? (isUpright ? Math.PI / 2.8 : 2.70);
+    group.rotation.x = START_RX;
+    group.rotation.z = START_RZ;
+    const INTRO_MS = 2200;       // duration of intro animation
+    const introStart = Date.now();
     let animId: number;
 
     const animate = () => {
       animId = requestAnimationFrame(animate);
       tx += (mx - tx) * 0.05;
       ty += (my - ty) * 0.05;
-      group.rotation.x = BASE_RX + ty * 0.12;
-      group.rotation.z = BASE_RZ + tx * 0.12;
-      group.position.y = 1.55;
+
+      // Ease-out cubic intro: blend from upright to resting orientation
+      const elapsed = Date.now() - introStart;
+      const t = Math.min(elapsed / INTRO_MS, 1);
+      const eased = 1 - Math.pow(1 - t, 3);
+      const introRX = START_RX + (BASE_RX - START_RX) * eased;
+      const introRZ = START_RZ + (BASE_RZ - START_RZ) * eased;
+
+      group.rotation.x = introRX + ty * 0.12 * eased;
+      group.rotation.y = restRY;
+      group.rotation.z = introRZ + tx * 0.12 * eased;
+      const isMobile = window.innerWidth <= 599;
+      const activeX = isMobile ? (mobileRestX ?? 0) : restX;
+      const activeY = isMobile ? (mobileRestY ?? restY) : restY;
+      const activeScale = isMobile ? (mobileRestScale ?? restScale) : restScale;
+      const p = (window as any).__device ?? { x: activeX, y: activeY, scale: activeScale, rx: DEFAULT_RX, rz: DEFAULT_RZ };
+      BASE_RX = p.rx ?? DEFAULT_RX;
+      BASE_RZ = p.rz ?? DEFAULT_RZ;
+      group.scale.setScalar(3.5 - (3.5 - (p.scale ?? activeScale)) * eased);
+      group.position.x = (p.x ?? activeX) * eased;
+      group.position.y = p.y ?? activeY;
       keyLight.position.set(8 - tx * 3, 4, -6 + ty * 3);
-      figure1.position.x = F1_BASE_X + tx * 0.4;
-      figure1.position.z = F1_BASE_Z + ty * 0.4;
       renderer.render(scene, camera);
     };
     animate();
@@ -270,5 +295,5 @@ export const Device3DMockup = () => {
     };
   }, []);
 
-  return <div ref={containerRef} className="device3dContainer" />;
+  return <div ref={containerRef} className={`device3dContainer${bgClass ? ` ${bgClass}` : ''}`} />;
 };

@@ -8,7 +8,7 @@ import { useBottomScrollConfetti } from '../hooks/useBottomScrollConfetti';
 import { useScrollFadeIn } from '../hooks/useScrollFadeIn';
 import { DescriptionIcon } from '../components/DescriptionIcon';
 import { ProjectAccordion } from '../components/ProjectAccordion';
-// import { Device3DMockup } from '../components/Device3DMockup'; // reserved for 3D header redesign
+import { Device3DMockup } from '../components/Device3DMockup';
 
 export const N26 = () => {
   useBottomScrollConfetti();
@@ -19,10 +19,21 @@ export const N26 = () => {
       <Header />
 
       <div className="projectTopContainer" id="main-content">
-        <div className="projectTop">
-          <div className="projectTopThumbnail topN26">
-            <img className="topicon" src="/images/n26_top2.png" alt="" />
-          </div>
+        <div className="projectTop projectTopNoBackground">
+          <Device3DMockup
+            screenImage="/images/n26_screen.jpg"
+            restRX={-0.2}
+            restRY={0.3}
+            restRZ={0}
+            startRX={-Math.PI / 2}
+            startRZ={Math.PI / 2.8}
+            restScale={2}
+            restX={3}
+            cameraX={0}
+            cameraY={2}
+            cameraZ={10}
+            bgClass="device3dBgN26"
+          />
           <div className="projectTopContent">
             <div className="appTitle">
               <div className="appIcon appIconN26"></div>
@@ -260,7 +271,7 @@ export const N26 = () => {
             <div className="projectSectionLeft"><br /></div>
           </div>
           <div className="projectEnd">
-            <p><h2>check out the app on your favourite OS</h2></p>
+            <h2>check out the app on your favourite OS</h2>
             <br />
             <a href="https://apps.apple.com/de/app/n26-die-mobile-bank/id956857223?l=en&mt=8">
               <img alt="Download on the App Store" src="/images/ios_button.svg" />

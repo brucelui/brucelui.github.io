@@ -6,6 +6,7 @@ import { Footer } from '../components/Footer';
 import { SubWorkBox } from '../components/SubWorkBox';
 import { useBottomScrollConfetti } from '../hooks/useBottomScrollConfetti';
 import { useScrollFadeIn } from '../hooks/useScrollFadeIn';
+import { Device3DMockup } from '../components/Device3DMockup';
 import { DescriptionIcon } from '../components/DescriptionIcon';
 import { ProjectAccordion } from '../components/ProjectAccordion';
 
@@ -18,10 +19,8 @@ export const Trivago = () => {
       <Header />
 
       <div className="projectTopContainer" id="main-content">
-        <div className="projectTop">
-          <div className="projectTopThumbnail topN26">
-            <img className="topicon" src="/images/trivago_top.gif" alt="" />
-          </div>
+        <div className="projectTop projectTopNoBackground">
+          <Device3DMockup screenImage="/images/trivago_screen.png" restRX={-0.8} restRZ={1.1} startRX={-Math.PI / 2} startRZ={-Math.PI / 4} restScale={3.2} restX={-3} restY={-5.5} mobileRestX={0} mobileRestY={-1.5} mobileRestScale={2.2} bgClass="device3dBgTrivago" />
           <div className="projectTopContent">
             <div className="appTitle">
               <div className="appIcon appIconTrivago"></div>
@@ -279,7 +278,7 @@ export const Trivago = () => {
             <div className="projectSectionLeft"><br /></div>
           </div>
           <div className="projectEnd">
-            <p><h2>check out the app on your favourite OS</h2></p>
+            <h2>check out the app on your favourite OS</h2>
             <br />
             <a href="https://itunes.apple.com/us/app/id376888389?mt=8">
               <img alt="Download on the App Store" src="/images/ios_button.svg" />
