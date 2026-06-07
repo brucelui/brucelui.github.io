@@ -21,7 +21,7 @@ export const N26 = () => {
       <div className="projectTopContainer" id="main-content">
         <div className="projectTop projectTopNoBackground">
           <Device3DMockup
-            screenImage="/images/n26_screen.jpg"
+            screenImage="/images/n26_screen.mp4" fallbackImage="/images/n26_screen.jpg"
             restRX={-0.2}
             restRY={0.3}
             restRZ={0}

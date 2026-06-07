@@ -9,6 +9,7 @@ interface Device3DMockupProps {
   startRX?: number;
   startRZ?: number;
   bgClass?: string;
+  fallbackImage?: string; // static image if video format unsupported
   cameraX?: number;
   cameraY?: number;
   cameraZ?: number;
@@ -31,6 +32,7 @@ export const Device3DMockup = ({
   cameraX = 4.2,
   cameraY = 9.0,
   cameraZ = 5.5,
+  fallbackImage,
   restScale = 2.2,
   restX = 0,
   restY = -1.5,
@@ -157,8 +159,47 @@ export const Device3DMockup = ({
     group.add(frontCap);
 
     // Screen
-    const screenTexture = new THREE.TextureLoader().load(screenImage);
-    screenTexture.colorSpace = THREE.SRGBColorSpace;
+    let textureReady = false;
+    const isVideo = /\.(mp4|webm|mov|ogg)$/i.test(screenImage);
+    let screenTexture: THREE.Texture;
+    let gifImg: HTMLImageElement | null = null;
+    let videoEl: HTMLVideoElement | null = null;
+
+    if (isVideo) {
+      videoEl = document.createElement('video');
+      videoEl.src = screenImage;
+      videoEl.loop = false;
+      videoEl.muted = true;
+      videoEl.playsInline = true;
+      videoEl.preload = 'auto';
+      videoEl.style.cssText = 'position:absolute;opacity:0;pointer-events:none;width:1px;height:1px;';
+      document.body.appendChild(videoEl);
+      screenTexture = new THREE.VideoTexture(videoEl);
+      screenTexture.colorSpace = THREE.SRGBColorSpace;
+      // Buffer but don't play yet — video plays after intro animation completes
+      videoEl.addEventListener('canplaythrough', () => { textureReady = true; }, { once: true });
+      // Fallback: if video format unsupported, load static image instead
+      videoEl.addEventListener('error', () => {
+        if (fallbackImage) {
+          new THREE.TextureLoader().load(fallbackImage, (tex) => {
+            tex.colorSpace = THREE.SRGBColorSpace;
+            screenMesh.material = new THREE.MeshBasicMaterial({
+              map: tex, color: 0xe8e8e8,
+              polygonOffset: true, polygonOffsetFactor: -4, polygonOffsetUnits: -4,
+            });
+            textureReady = true;
+          });
+        } else {
+          textureReady = true; // show device with blank screen
+        }
+      }, { once: true });
+      videoEl.load();
+    } else {
+      screenTexture = new THREE.TextureLoader().load(screenImage, () => {
+        textureReady = true;
+      });
+      screenTexture.colorSpace = THREE.SRGBColorSpace;
+    }
     const screenGeo = new THREE.ShapeGeometry(roundedRect(W - 0.14, H - 0.14, CR - 0.07), 96);
     // ShapeGeometry uses raw x/y positions as UVs; remap to [0, 1]
     const sw = W - 0.14;
@@ -250,8 +291,9 @@ export const Device3DMockup = ({
     const START_RZ = startRZ ?? (isUpright ? Math.PI / 2.8 : 2.70);
     group.rotation.x = START_RX;
     group.rotation.z = START_RZ;
+    group.visible = false; // hidden until texture loads
     const INTRO_MS = 2200;       // duration of intro animation
-    const introStart = Date.now();
+    let introStart: number | null = null; // set once texture is ready
     let animId: number;
 
     const animate = () => {
@@ -260,7 +302,16 @@ export const Device3DMockup = ({
       ty += (my - ty) * 0.05;
 
       // Ease-out cubic intro: blend from upright to resting orientation
-      const elapsed = Date.now() - introStart;
+      if (textureReady && introStart === null) {
+        group.visible = true;
+        introStart = Date.now();
+        if (videoEl && videoEl.readyState >= 3) videoEl.play();
+      }
+      // Also play if video becomes ready mid-animation (but not after it has ended)
+      if (videoEl && introStart !== null && videoEl.paused && !videoEl.ended && videoEl.readyState >= 3) {
+        videoEl.play();
+      }
+      const elapsed = introStart !== null ? Date.now() - introStart : 0;
       const t = Math.min(elapsed / INTRO_MS, 1);
       const eased = 1 - Math.pow(1 - t, 3);
       const introRX = START_RX + (BASE_RX - START_RX) * eased;
@@ -280,6 +331,7 @@ export const Device3DMockup = ({
       group.position.x = (p.x ?? activeX) * eased;
       group.position.y = p.y ?? activeY;
       keyLight.position.set(8 - tx * 3, 4, -6 + ty * 3);
+      // VideoTexture updates automatically; no manual needsUpdate needed
       renderer.render(scene, camera);
     };
     animate();
@@ -291,6 +343,11 @@ export const Device3DMockup = ({
       renderer.dispose();
       if (container.contains(renderer.domElement)) {
         container.removeChild(renderer.domElement);
+      }
+      if (gifImg && document.body.contains(gifImg)) document.body.removeChild(gifImg);
+      if (videoEl && document.body.contains(videoEl)) {
+        videoEl.pause();
+        document.body.removeChild(videoEl);
       }
     };
   }, []);
