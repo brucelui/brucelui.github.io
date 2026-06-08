@@ -21,7 +21,7 @@ export const Ecosia = () => {
 
       <div className="projectTopContainer" id="main-content">
         <div className="projectTop projectTopNoBackground">
-          <Device3DMockup screenImage="/images/ecosia_screen.jpg" restRX={-Math.PI / 2} restRZ={Math.PI / 2.8} />
+          <Device3DMockup screenImage="/images/ecosia_screen.mp4" fallbackImage="/images/ecosia_screen.jpg" videoStartDelay={600} restRX={-Math.PI / 2} restRZ={Math.PI / 2.8} />
           <div className="projectTopContent">
             <div className="appTitle">
               <div className="appIcon appIconEcosia"></div>
