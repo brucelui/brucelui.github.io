@@ -10,6 +10,7 @@ interface Device3DMockupProps {
   startRZ?: number;
   bgClass?: string;
   fallbackImage?: string; // static image if video format unsupported
+  videoStartDelay?: number; // ms to wait after intro starts before playing video
   cameraX?: number;
   cameraY?: number;
   cameraZ?: number;
@@ -33,6 +34,7 @@ export const Device3DMockup = ({
   cameraY = 9.0,
   cameraZ = 5.5,
   fallbackImage,
+  videoStartDelay = 0,
   restScale = 2.2,
   restX = 0,
   restY = -1.5,
@@ -305,10 +307,11 @@ export const Device3DMockup = ({
       if (textureReady && introStart === null) {
         group.visible = true;
         introStart = Date.now();
-        if (videoEl && videoEl.readyState >= 3) videoEl.play();
+        // videoStartDelay handled in the per-frame check below
       }
       // Also play if video becomes ready mid-animation (but not after it has ended)
-      if (videoEl && introStart !== null && videoEl.paused && !videoEl.ended && videoEl.readyState >= 3) {
+      const videoDelayElapsed = introStart !== null ? Date.now() - introStart >= videoStartDelay : false;
+      if (videoEl && introStart !== null && videoDelayElapsed && videoEl.paused && !videoEl.ended && videoEl.readyState >= 3) {
         videoEl.play();
       }
       const elapsed = introStart !== null ? Date.now() - introStart : 0;
